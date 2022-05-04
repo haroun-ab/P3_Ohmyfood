@@ -164,7 +164,6 @@ header .booking button:hover {
 }
 .restaurants-container__text {
   margin: 16px 15px;
-  position: relative;
 }
 .restaurants-container a {
   display: flex;
@@ -192,6 +191,30 @@ header .booking button:hover {
   color: #02934b;
   font-size: 15px;
   font-weight: 500;
+}
+.restaurants .heart {
+  position: absolute;
+  right: 10px;
+  bottom: 32px;
+  cursor: pointer;
+}
+.restaurants .heart--filled {
+  z-index: 0;
+}
+.restaurants .heart--filled:focus {
+  display: initial;
+}
+.restaurants .heart--filled:focus::after {
+  display: initial;
+}
+.restaurants .heart--filled:focus::before {
+  display: none;
+}
+.restaurants .heart--empty {
+  z-index: 1;
+}
+.restaurants .heart--empty:hover {
+  display: none;
 }
 .restaurants img {
   width: 100%;
@@ -238,8 +261,8 @@ footer p {
   text-align: center;
 }
 
-/*_________________RESPONSIVE_________________*/
-/*Tablet*/
+/*______________________RESPONSIVE_______________________*/
+/*Version Tablet*/
 @media (min-width: 500px) {
   .functioning .steps-container .fa-solid {
     font-size: 25px;
@@ -279,7 +302,7 @@ footer p {
     margin-left: 200%;
   }
 }
-/*Desktop*/
+/*Version Desktop*/
 @media (min-width: 992px) {
   .functioning .steps-list {
     display: flex;
