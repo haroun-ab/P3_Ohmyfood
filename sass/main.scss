@@ -59,6 +59,38 @@ a {
     cursor: pointer;
     transform: scale(1.02);
     box-shadow: 0px 5px 7px #b4b4b4;
+    background: linear-gradient(355deg, #9b60e4, 50%, #fc81d9);
+
+  }
+}
+@mixin heart-style{
+  position: absolute;
+  right: 10px;
+  bottom: 32px;
+  cursor: pointer;
+  background-color: white;
+
+  &--empty {
+    z-index: 1;
+    fill: transparent;
+    stroke: #0c0c0c;
+    &:hover {
+      display: none;
+    }
+  }
+
+  &--filled {
+    z-index: 0;
+    fill: transparent;
+    stroke:none;
+    
+    
+    &:hover {
+      fill: url(#text-fill);
+      z-index: 1;
+      animation:scale-up .1s;
+      @keyframes scale-up{0%{transform:scale(0.7)}100%{transform:scale(1)}}
+    }
   }
 }
 
@@ -227,7 +259,7 @@ header {
 
 
     &:hover {
-      transform: scale(1.07);
+      transform: scale(1.03);
     }
 
     &__text {
@@ -266,30 +298,12 @@ header {
     }
   }
 
-
-  .heart {
-    position: absolute;
-    right: 10px;
-    bottom: 32px;
-    cursor: pointer;
-
-
-    &--empty {
-      z-index: 1;
-
-      &:hover {
-        z-index: 0;
-      }
+  
+  
+    .heart{
+      @include heart-style
     }
 
-    &--filled {
-      z-index: 0;
-
-      &:hover {
-        z-index: 1;
-      }
-    }
-  }
 
   img {
     width: 100%;
@@ -316,6 +330,14 @@ header {
   padding: 13px 4%;
   max-width: 1200px;
   margin: 0 0 -50px 0;
+  .heart{
+    @include heart-style;
+    background-color: $lighter-grey;
+    position: absolute;
+    right: 50px;
+    top: 35px;
+    cursor: pointer;
+  }
 
   h2 {
     font-family: shrikhand, sans-serif;
@@ -420,13 +442,12 @@ footer {
   }
 }
 
+/*_________________---RESPONSIVE---__________________*/
 
-/*______________________RESPONSIVE_______________________*/
-
-/*Version Tablet*/
+/*_____________Version Tablet---RESPONSIVE---___________*/
 @media (min-width:500px) {
 
-  /*PAGE D'ACCUEIL*/
+/*____________PAGE D'ACCUEIL---RESPONSIVE:tablet---__________*/
   .functioning {
     .steps-container {
       .fa-solid {
@@ -455,7 +476,7 @@ footer {
       width: 48%
     }
   }
-
+/*______________FOOTER---RESPONSIVE:tablet---_____________*/
   .footer-container {
     .footer-text {
       width: 200px;
@@ -475,7 +496,7 @@ footer {
     }
   }
 
-  /*PAGE DU MENU*/
+  /*____________PAGE DU MENU---RESPONSIVE:tablet---____________*/
   #background {
     img {
       height: 500px;
@@ -484,10 +505,10 @@ footer {
   }
 }
 
-/*Version Desktop*/
+/*____________________Version Desktop---RESPONSIVE---_____________________*/
 @media (min-width:1024px) {
 
-  /*PAGE D'ACCUEIL*/
+/*___________PAGE D'ACCUEIL---RESPONSIVE:desktop---___________*/
   .functioning {
     .steps-list {
       display: flex;
@@ -542,9 +563,48 @@ footer {
       }
     }
   }
+/*____________PAGE DU MENU---RESPONSIVE:desktop---____________*/
+header {
+  #return {
+    left: 10%;
+    top: 10px;
+    font-size: 25px;
+    padding: 10px;
 
+    &:hover {
+      border-radius: 25px;
+    }
+
+    &-text {
+      display: initial;
+      margin-left: 10px;
+      font-weight: 500;
+      font-size: 18px;
+    }
+  }
+}
+
+#background {
+  img {
+    height: 600px;
+  }
+}
+
+.menu {
+  margin: -100px auto -0px auto;
+
+  .menu-container {
+    display: flex;
+
+  }
+
+  .three_courses {
+    width: 33%;
+    margin: 0 1%;
+  }
+}
+/*______________FOOTER---RESPONSIVE:desktop---_____________*/
   footer {
-    width: 100%;
     padding: 50px 0 15px 0;
     margin-top: -50px;
 
@@ -553,12 +613,6 @@ footer {
     }
 
     .footer-container {
-      max-width: 1600px;
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
       .footer-text {
         display: flex;
         justify-content: space-around;
@@ -598,46 +652,4 @@ footer {
       }
     }
   }
-
-  /*PAGE DU MENU*/
-  header {
-    #return {
-      left: 10%;
-      top: 10px;
-      font-size: 25px;
-      padding: 10px;
-
-      &:hover {
-        border-radius: 25px;
-      }
-
-      &-text {
-        display: initial;
-        margin-left: 10px;
-        font-weight: 500;
-        font-size: 18px;
-      }
-    }
-  }
-
-  #background {
-    img {
-      height: 700px;
-    }
-  }
-
-  .menu {
-    margin: -100px auto -0px auto;
-
-    .menu-container {
-      display: flex;
-
-    }
-
-    .three_courses {
-      width: 33%;
-      margin: 0 1%;
-    }
-  }
-
 }

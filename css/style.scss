@@ -26,7 +26,7 @@ a {
   align-items: center;
 }
 
-.restaurants h3, .functioning h3, header .booking h2 {
+.restaurants h3, header .booking h2 {
   font-size: 1.6rem;
   font-weight: 800;
 }
@@ -113,7 +113,7 @@ header .booking button:hover {
   cursor: pointer;
   transform: scale(1.02);
   box-shadow: 0px 5px 7px #b4b4b4;
-  background: linear-gradient(355deg, #9b60e4, 50%, #fc81d9);
+  background: linear-gradient(355deg, red, 50%, #ff79da);
 }
 
 /*________Section 1: FUNCTIONING________*/
@@ -121,6 +121,7 @@ header .booking button:hover {
   margin: 40px 4% 40px 5%;
 }
 .functioning h3 {
+  background: linear-gradient(355deg, #9356dc, 50%, #ff79da);
   margin-bottom: 0;
 }
 .functioning .steps-container {
@@ -181,7 +182,7 @@ header .booking button:hover {
   transition: 0.4s;
 }
 .restaurants-container:hover {
-  transform: scale(1.03);
+  transform: scale(1.07);
 }
 .restaurants-container__text {
   margin: 16px 15px;
@@ -218,33 +219,18 @@ header .booking button:hover {
   right: 10px;
   bottom: 32px;
   cursor: pointer;
-  background-color: white;
 }
 .restaurants .heart--empty {
   z-index: 1;
-  fill: transparent;
-  stroke: #0c0c0c;
 }
 .restaurants .heart--empty:hover {
-  display: none;
+  z-index: 0;
 }
 .restaurants .heart--filled {
   z-index: 0;
-  fill: transparent;
-  stroke: none;
 }
 .restaurants .heart--filled:hover {
-  fill: url(#text-fill);
   z-index: 1;
-  animation: scale-up 0.1s;
-}
-@keyframes scale-up {
-  0% {
-    transform: scale(0.7);
-  }
-  100% {
-    transform: scale(1);
-  }
 }
 .restaurants img {
   width: 100%;
@@ -268,44 +254,6 @@ header .booking button:hover {
   padding: 13px 4%;
   max-width: 1200px;
   margin: 0 0 -50px 0;
-}
-.menu .heart {
-  position: absolute;
-  right: 10px;
-  bottom: 32px;
-  cursor: pointer;
-  background-color: white;
-  background-color: #f5f5f5;
-  position: absolute;
-  right: 50px;
-  top: 35px;
-  cursor: pointer;
-}
-.menu .heart--empty {
-  z-index: 1;
-  fill: transparent;
-  stroke: #0c0c0c;
-}
-.menu .heart--empty:hover {
-  display: none;
-}
-.menu .heart--filled {
-  z-index: 0;
-  fill: transparent;
-  stroke: none;
-}
-.menu .heart--filled:hover {
-  fill: url(#text-fill);
-  z-index: 1;
-  animation: scale-up 0.1s;
-}
-@keyframes scale-up {
-  0% {
-    transform: scale(0.7);
-  }
-  100% {
-    transform: scale(1);
-  }
 }
 .menu h2 {
   font-family: shrikhand, sans-serif;
@@ -370,7 +318,7 @@ header .booking button:hover {
   cursor: pointer;
   transform: scale(1.02);
   box-shadow: 0px 5px 7px #b4b4b4;
-  background: linear-gradient(355deg, #9b60e4, 50%, #fc81d9);
+  background: linear-gradient(355deg, red, 50%, #ff79da);
 }
 
 /*___________FOOTER__________*/
@@ -412,9 +360,9 @@ footer p {
 }
 
 /*_________________---RESPONSIVE---__________________*/
-/*_____________Version Tablet---RESPONSIVE---___________*/
+/*_____________Version Tablet___________*/
 @media (min-width: 500px) {
-  /*____________PAGE D'ACCUEIL---RESPONSIVE:tablet---__________*/
+  /*____________PAGE D'ACCUEIL__________*/
   .functioning .steps-container .fa-solid {
     font-size: 25px;
     left: 17%;
@@ -437,7 +385,6 @@ footer p {
     width: 48%;
   }
 
-  /*______________FOOTER---RESPONSIVE:tablet---_____________*/
   .footer-container {
     margin: auto;
     display: flex;
@@ -454,14 +401,14 @@ footer p {
     margin-left: 200%;
   }
 
-  /*____________PAGE DU MENU---RESPONSIVE:tablet---____________*/
+  /*____________PAGE DU MENU____________*/
   #background img {
     height: 500px;
   }
 }
-/*____________________Version Desktop---RESPONSIVE---_____________________*/
+/*___________Version Desktop__________*/
 @media (min-width: 1024px) {
-  /*___________PAGE D'ACCUEIL---RESPONSIVE:desktop---___________*/
+  /*___________PAGE D'ACCUEIL___________*/
   .functioning .steps-list {
     display: flex;
   }
@@ -504,7 +451,7 @@ footer p {
     margin-right: 0;
   }
 
-  /*____________PAGE DU MENU---RESPONSIVE:desktop---____________*/
+  /*____________PAGE DU MENU____________*/
   header #return {
     left: 10%;
     top: 10px;
@@ -522,7 +469,7 @@ footer p {
   }
 
   #background img {
-    height: 600px;
+    height: 700px;
   }
 
   .menu {
@@ -536,13 +483,21 @@ footer p {
     margin: 0 1%;
   }
 
-  /*______________FOOTER---RESPONSIVE:desktop---_____________*/
+  /*______________FOOTER_____________*/
   footer {
+    width: 100%;
     padding: 50px 0 15px 0;
     margin-top: -50px;
   }
   footer img {
     width: 200px;
+  }
+  footer .footer-container {
+    max-width: 1600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   footer .footer-container .footer-text {
     display: flex;
@@ -573,4 +528,4 @@ footer p {
   }
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style.scss.map */
