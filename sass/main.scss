@@ -68,12 +68,13 @@ a {
   right: 10px;
   bottom: 32px;
   cursor: pointer;
-  background-color: white;
+  background: none;
+  stroke: none;
 
   &--empty {
     z-index: 1;
     fill: transparent;
-    stroke: #0c0c0c;
+    
     &:hover {
       display: none;
     }
@@ -82,12 +83,13 @@ a {
   &--filled {
     z-index: 0;
     fill: transparent;
-    stroke:none;
+    stroke: #0c0c0c;
     
     
     &:hover {
       fill: url(#text-fill);
       z-index: 1;
+      stroke: none;
       animation:scale-up .1s;
       @keyframes scale-up{0%{transform:scale(0.7)}100%{transform:scale(1)}}
     }
@@ -332,7 +334,6 @@ header {
   margin: 0 0 -50px 0;
   .heart{
     @include heart-style;
-    background-color: $lighter-grey;
     position: absolute;
     right: 50px;
     top: 35px;
@@ -566,7 +567,7 @@ footer {
 /*____________PAGE DU MENU---RESPONSIVE:desktop---____________*/
 header {
   #return {
-    left: 10%;
+    left: 1%;
     top: 10px;
     font-size: 25px;
     padding: 10px;
