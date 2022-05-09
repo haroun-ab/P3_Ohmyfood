@@ -7,17 +7,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
     <title>La palette du goût</title>
-    <link href="/css/style.css" rel="stylesheet" type="text/css" />
-    <link href="/css/normalize.css" rel="stylesheet" type="text/css" />
+    <link href="/S_CSS/style.css" rel="stylesheet" type="text/css" />
+    <link href="/S_CSS/normalize.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
         integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
+    
     <!-----------HEADER------------>
+    <div class="loader">
+        <div class="dot">
+  
+        </div>
+    </div>
     <header>
-        <div class="header-top">
+
             <div class="logo">
                 <h1>
                     <a href="../../index.html">
@@ -36,7 +42,9 @@
     <!-----------MENU------------>
     <section class="menu">
         <h2>La note enchantée</h2>
-        <svg class="heart heart--empty" xmlns="http://www.w3.org/2000/svg" width="28" height="24" viewBox="0 0 24 24">
+        <svg  class="heart heart--empty" xmlns="http://www.w3.org/2000/svg" width="28" height="24" viewBox="0 0 24 24">
+            <a href="#id">
+
             <path
               d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z" />
             <defs>
@@ -44,14 +52,16 @@
                 <stop offset="0%" stop-color="#FF79DA"/>
                 <stop offset="100%" stop-color="#9356DC"/>
               </linearGradient>
-              
+            
             </defs>
+        </a>
             </svg>
-            <svg class="heart heart--filled" xmlns="http://www.w3.org/2000/svg" width="28" height="24" viewBox="0 0 24 24">
+            
+            <svg id="id" class="heart heart--filled" xmlns="http://www.w3.org/2000/svg" width="28" height="24" viewBox="0 0 24 24">
                 <path
                   d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z" />
               </svg>
-             
+            
             
         <div class="menu-container">
         <div class="three_courses">

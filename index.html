@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
     <title>Ohmyfood</title>
-    <link href="../css/style.css" rel="stylesheet" type="text/css" />
-    <link href="../css/normalize.css" rel="stylesheet" type="text/css" />
+    <link href="S_CSS/style.css" rel="stylesheet" type="text/css" />
+    <link href="S_CSS/normalize.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
       integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
       crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -16,6 +16,13 @@
 
   <body>
     <!---------------HEADER--------------->
+
+    <div class="loader">
+      <div class="dot">
+
+      </div>
+    </div>
+    
     <header>
       <div class="header-top">
         <div class="logo">
@@ -85,7 +92,6 @@
                   <stop offset="0%" stop-color="#FF79DA"/>
                   <stop offset="100%" stop-color="#9356DC"/>
                 </linearGradient>
-                
               </defs>
               
             </svg>
@@ -110,21 +116,40 @@
                 <h4>La note enchantée</h4>
                 <p>Charonne</p>
               </div>
-              <div class="favourite"></div>
+              
             </a>
             <svg class="heart heart--empty" xmlns="http://www.w3.org/2000/svg" width="28" height="24" viewBox="0 0 24 24"
               stroke="black" fill="white">
               <path
                 d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z" />
+                <defs>
+                  <linearGradient id="text-fill">
+                    <stop offset="0%" stop-color="#FF79DA"/>
+                    <stop offset="100%" stop-color="#9356DC"/>
+                  </linearGradient>
+                </defs>   
             </svg>
             <svg class="heart heart--filled" xmlns="http://www.w3.org/2000/svg" width="28" height="24" viewBox="0 0 24 24"
               >
               <path
                 d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z" />
+              <defs>
+                <linearGradient id="text-fill">
+                  <stop offset="0%" stop-color="#FF79DA"/>
+                  <stop offset="100%" stop-color="#9356DC"/>
+                </linearGradient>
+              </defs>   
+              <!--<script type="text/javascript" language="javascript">
+                var likeBtn = document.querySelector(".heart--filled");
+                likeBtn.addEventListener("click", function(){
+                likeBtn.classList.toggle("remplir")-->
+              })
+              </script>
             </svg>
-           
           </div>
           
+          
+
           <div class="restaurants-container">
             <a href="/menu-pages/Resto3-ALaFrancaise/index.html">
               <img src=" /Images/restaurants/a_la_francaise.jpg" alt="Restaurant A la française">
@@ -132,7 +157,7 @@
                 <h4>À la française</h4>
                 <p>Cité Rouge</p>
               </div>
-              <div class="favourite"></div>
+              
             </a>
             <svg class="heart heart--empty" xmlns="http://www.w3.org/2000/svg" width="28" height="24" viewBox="0 0 24 24"
               stroke="black" fill="white">
@@ -152,7 +177,7 @@
                 <h4>Le délice des sens</h4>
                 <p>Folie-Méricourt</p>
               </div>
-              <div class="favourite"></div>
+  
             </a>
             <svg class="heart heart--empty" xmlns="http://www.w3.org/2000/svg" width="28" height="24" viewBox="0 0 24 24"
               stroke="black" fill="white">
