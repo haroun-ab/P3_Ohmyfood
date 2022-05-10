@@ -11,7 +11,7 @@ html {
 
 body {
   color: black;
-  min-width: 300px;
+  min-width: 360px;
 }
 
 main {
@@ -41,9 +41,9 @@ a {
 }
 .loader::before {
   content: "";
-  border: 12px solid transparent;
-  border-top: 12px solid #ff79da;
-  border-bottom: 12px solid #ff79da;
+  border: 10px solid transparent;
+  border-top: 10px solid #ff79da;
+  border-bottom: 10px solid #ff79da;
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -55,9 +55,9 @@ a {
 }
 .loader::after {
   content: "";
-  border: 12px solid transparent;
-  border-top: 12px solid #99e2d0;
-  border-bottom: 12px solid #99e2d0;
+  border: 10px solid transparent;
+  border-top: 10px solid #99e2d0;
+  border-bottom: 10px solid #99e2d0;
   width: 70px;
   height: 70px;
   border-radius: 50%;
@@ -249,7 +249,7 @@ header .booking button:hover {
   transition: 0.4s;
 }
 .restaurants-container:hover {
-  transform: scale(1.03);
+  transform: scale(1.02);
 }
 .restaurants-container__text {
   margin: 16px 15px;
@@ -262,8 +262,8 @@ header .booking button:hover {
 }
 .restaurants-container h4 {
   margin: 0 0 3px 0;
-  font-size: 20px;
-  font-weight: 800;
+  font-size: 19px;
+  font-weight: 700;
 }
 .restaurants-container p {
   margin: 4px 0 0 0;
@@ -351,7 +351,6 @@ header .booking button:hover {
   border-radius: 50px 50px 0 0;
   padding: 13px 4%;
   max-width: 1200px;
-  margin: 0 0 -50px 0;
 }
 .menu .heart {
   position: absolute;
@@ -432,13 +431,114 @@ header .booking button:hover {
   position: relative;
   border-radius: 15px;
   box-shadow: 0 5px 8px rgba(114, 114, 114, 0.1568627451);
+  overflow: hidden;
 }
-.menu .price {
+.menu .courses-container--delay1 {
+  animation: appear 500ms 1s ease-in-out backwards;
+}
+.menu .courses-container--delay2 {
+  animation: appear 500ms 1.1s ease-in-out backwards;
+}
+.menu .courses-container--delay3 {
+  animation: appear 500ms 1.2s ease-in-out backwards;
+}
+.menu .courses-container--delay4 {
+  animation: appear 500ms 1.3s ease-in-out backwards;
+}
+.menu .courses-container--delay5 {
+  animation: appear 500ms 1.4s ease-in-out backwards;
+}
+.menu .courses-container--delay6 {
+  animation: appear 500ms 1.5s ease-in-out backwards;
+}
+.menu .courses-container--delay7 {
+  animation: appear 500ms 1.6s ease-in-out backwards;
+}
+.menu .courses-container--delay8 {
+  animation: appear 500ms 1.7s ease-in-out backwards;
+}
+.menu .courses-container--delay9 {
+  animation: appear 500ms 1.8s ease-in-out backwards;
+}
+.menu .courses-container--delay10 {
+  animation: appear 500ms 1.9s ease-in-out backwards;
+}
+@keyframes appear {
+  0% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.menu .courses-container:hover {
+  cursor: pointer;
+}
+.menu .courses-container:hover p {
+  text-overflow: ellipsis;
+}
+.menu .courses-container:hover .check-animation {
+  display: initial;
+  height: 62px;
+  width: 60px;
+  background-color: #99e2d0;
+  position: absolute;
+  z-index: 20;
+  right: 0;
+  bottom: 0px;
+  border-radius: 0 10px 10px 0;
+  animation: check 0.5s ease-in-out both;
+}
+@keyframes check {
+  0% {
+    transform: scaleX(0);
+    transform-origin: 100% 100%;
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(1);
+    transform-origin: 100% 100%;
+    opacity: 1;
+  }
+}
+.menu .courses-container:hover .check-animation .fa-solid {
+  color: white;
+  padding: 21px 19px;
+  font-size: 20px;
+  animation: rotate 1.2s;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.menu .courses-container:hover .price {
+  animation: price-slide 0.5s 100ms both;
+}
+@keyframes price-slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50px);
+  }
+}
+.menu .courses-container .check-animation {
+  display: none;
+}
+.menu .courses-container .price {
   font-weight: 600;
   position: absolute;
-  right: 0;
-  margin: 0 20px;
+  right: 10px;
+  bottom: 0px;
+  padding: 28px 10px 18px 10px;
   color: #363636;
+  background-color: white;
 }
 .menu .courses-name {
   font-size: 17px;
