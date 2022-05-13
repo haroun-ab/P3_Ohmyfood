@@ -15,12 +15,13 @@
     <link rel="icon" type="image/png" href="../../Images/logo/favicon.png">
 </head>
 
-<body>
+<body class="menu-body">
     <!-----------HEADER------------>
     <div class="loader">
-        <div class="dot">
+        <div class="spinner">
 
         </div>
+
     </div>
     <header>
         <div class="header-top">
@@ -36,13 +37,12 @@
                     id="return-text">Retour</span></a>
         </div>
     </header>
-    <!-----------IMAGE DE FOND------------>
-    <div id="background">
+    <!-------IMAGE DE FOND-------->
+    <div class="background-menu">
         <img src="../../Images/restaurants/resto1.jpg" alt="Restaurant La palette du goût">
     </div>
     <!-----------MENU------------>
     <section class="menu">
-        <h2>À la francaise</h2>
         <svg class="heart heart--empty" xmlns="http://www.w3.org/2000/svg" width="28" height="24" viewBox="0 0 24 24">
             <path
                 d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z" />
@@ -59,81 +59,117 @@
                 d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z" />
         </svg>
 
-
+        <h2>À la francaise</h2>
         <div class="menu-container">
             <div class="three_courses">
-                <h3>ENTRÉES</h3>
-                <div class="courses-container courses-container--delay1">
-                    <p class="courses-name">Tartare de poulpe acidulé</p>
-                    <p class="courses-description">Aux zeste d'orange
-                        <span class="price">25€</span>
-                    </p>
+                <h3>ENTREES</h3>
+                <div class="courses-container">
+                    <div class="menu-text">
+                        <p class="courses-name" title="Tartare de poulpe acidulé">Tartare de poulpe acidulé</p>
+                        <p class="courses-description" title="Aux zestes d'orange">Aux zestes d'orange</p>
+                    </div>
+                    <span class="price">25€</span>
+                    <div class="check-animation">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
                 </div>
-                <div class="courses-container courses-container--delay2">
-                    <p class="courses-name">Velouté de légumes d'antan
-                    </p>
-                    <p class="courses-description">Carotte, panais, topinambour
-                        <span class="price">35€</span>
-                    </p>
+                <div class="courses-container">
+                    <div class="menu-text">
+                        <p class="courses-name" title="Velouté de légumes d'antan">Velouté de légumes d'antan</p>
+                        <p class="courses-description" title="Carotte, panais, topinambour">Carotte, panais, topinambour
+                        </p>
+                    </div>
+                    <span class="price">35€</span>
+                    <div class="check-animation">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
                 </div>
-                <div class="courses-container courses-container--delay3">
-                    <p class="courses-name">Soupe à l'oignon</p>
-                    <p class="courses-description">Revisitée
-                        <span class="price">20€</span>
-                    </p>
-                    </p>
+                <div class="courses-container">
+                    <div class="menu-text">
+                        <p class="courses-name" title="Soupe à l'oignon">Soupe à l'oignon</p>
+                        <p class="courses-description" title="Revisitée">Revisitée</p>
+                    </div>
+                    <span class="price">20€</span>
+                    <div class="check-animation">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
                 </div>
             </div>
 
-
-
             <div class="three_courses">
                 <h3>PLATS</h3>
-                <div class="courses-container courses-container--delay4">
-                    <p class="courses-name">Coquille de Saint-Jacques</p>
-                    <p class="courses-description">Accompagnée d'une purée de panais
-                        <span class="price">40€</span>
-                    </p>
+                <div class="courses-container">
+                    <div class="menu-text">
+                        <p class="courses-name" title="Coquilles Saint-Jacques">Coquilles Saint-Jacques</p>
+                        <p class="courses-description" title="Accompagnées d'une purée de panais">Accompagnées d'une
+                            purée de panais</p>
+                    </div>
+                    <span class="price">40€</span>
+                    <div class="check-animation">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
                 </div>
-                <div class="courses-container courses-container--delay5">
-                    <p class="courses-name">Magret de canard</p>
-                    <p class="courses-description">Et parmentier de pommes de terres
-                        <span class="price">35€</span>
-                    </p>
+                <div class="courses-container">
+                    <div class="menu-text">
+                        <p class="courses-name" title="Magret de canard">Magret de canard</p>
+                        <p class="courses-description" title="Et parmentier de pommes de terre">Et parmentier de pommes
+                            de terre</p>
+                    </div>
+                    <span class="price">35€</span>
+                    <div class="check-animation">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
                 </div>
-                <div class="courses-container courses-container--delay6">
-                    <p class="courses-name">Pigeonneau d'Ille-et-Vilaine</p>
-                    <p class="courses-description">Sur son lit gnocchis aux légumes
-                        <span class="price">44€</span>
-                    </p>
+                <div class="courses-container">
+                    <div class="menu-text">
+                        <p class="courses-name" title="Pigeonneau d’Ille-et-Vilaine">Pigeonneau d’Ille-et-Vilaine</p>
+                        <p class="courses-description" title="Sur son lit de gnocchis aux légume">Sur son lit de
+                            gnocchis aux légumes</p>
+                    </div>
+                    <span class="price">44€</span>
+                    <div class="check-animation">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
                 </div>
             </div>
 
             <div class="three_courses">
                 <h3>DESSERTS</h3>
-                <div class="courses-container courses-container--delay7">
-                    <p class="courses-name">Pétales de violettes glacés</p>
-                    <p class="courses-description">Et purée de noisettes
-                        <span class="price">18€</span>
-                    </p>
+                <div class="courses-container">
+                    <div class="menu-text">
+                        <p class="courses-name" title="Pétales de violettes glacés">Pétales de violettes glacés</p>
+                        <p class="courses-description" title="Et purée de noisettes">Et purée de noisettes</p>
+                    </div>
+                    <span class="price">18€</span>
+                    <div class="check-animation">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
                 </div>
-                <div class="courses-container courses-container--delay8">
-                    <p class="courses-name">Fondant au chocolat</p>
-                    <p class="courses-description">Revisité
-                        <span class="price">22€</span>
-                    </p>
+                <div class="courses-container">
+                    <div class="menu-text">
+                        <p class="courses-name" title="Fondant au chocolat">Fondant au chocolat</p>
+                        <p class="courses-description" title="Revisité">Revisité</p>
+                    </div>
+                    <span class="price">22€</span>
+                    <div class="check-animation">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
                 </div>
-                <div class="courses-container courses-container--delay9">
-                    <p class="courses-name">Millefeuille croustillant</p>
-                    <p class="courses-description">Myrtilles et pâte d'amande
-                        <span class="price">23€</span>
-                    </p>
+                <div class="courses-container">
+                    <div class="menu-text">
+                        <p class="courses-name" title="Millefeuille croustillant">Millefeuille croustillant</p>
+                        <p class="courses-description" title="Myrtilles et pâte d’amande">Myrtilles et pâte d’amande</p>
+                    </div>
+                    <span class="price">23€</span>
+                    <div class="check-animation">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
                 </div>
             </div>
-
+        </div>
         </div>
         <div class="order">
-            <button type="button"><a href="#">Commander</a></button>
+            <a class="order-link" href="#">Commander</a>
         </div>
     </section>
     <footer>
@@ -163,8 +199,6 @@
                     </a>
                 </div>
             </div>
-            <p>Copyright © 2016–2022 Ohmyfood.com™. Tous droits réservés.
-            </p>
         </div>
     </footer>
 </body>

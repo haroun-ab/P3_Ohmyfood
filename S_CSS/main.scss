@@ -23,6 +23,10 @@ body {
   min-width: 360px;
 }
 
+.menu-body {
+  background-color: $lighter-grey;
+}
+
 main {
   max-width: 1600px;
   margin: auto;
@@ -49,18 +53,15 @@ a {
   font-weight: 500;
   box-shadow: 0px 5px 7px #bfbfbf;
   transition: 0.2s;
-
   a {
     color: white;
     margin: 0;
   }
-
   &:hover {
     cursor: pointer;
     transform: scale(1.01);
     box-shadow: 0px 5px 7px #9d9d9d;
     background: linear-gradient(355deg, #9c61e4, 50%, #fd85db);
-
   }
 }
 
@@ -71,152 +72,122 @@ a {
   cursor: pointer;
   background: none;
   stroke: none;
-
   &--empty {
     z-index: 1;
     fill: transparent;
-
     &:hover {
       display: none;
     }
   }
-
   &--filled {
     z-index: 0;
     fill: transparent;
     stroke: #0c0c0c;
     stroke-width: 0.1vw;
-
-    &.remplir {
-      fill: url(#text-fill);
-      z-index: 1;
-      stroke: none;
-      animation: scale-up .1s;
-
-      @keyframes scale-up {
-        0% {
-          transform: scale(0.7)
-        }
-
-        100% {
-          transform: scale(1)
-        }
-      }
-    }
-
     &:hover {
       fill: url(#text-fill);
       z-index: 1;
       stroke: none;
-      animation: scale-up .1s;
-
+      animation: scale-up 300ms both;
       @keyframes scale-up {
         0% {
           transform: scale(0.7)
         }
-
         100% {
-          transform: scale(1)
+          transform: scale(1.1)
         }
       }
     }
   }
 }
-
-
-
 .loader {
   width: 100%;
   height: 100%;
   z-index: 10;
   position: fixed;
-  background-color: #ffffffc2;
-  animation: disappear 50ms 1s forwards;
+  background-color: rgb(255, 255, 255);
+  animation: background-disappear 1400ms 400ms forwards;
 
-  &::before {
-    content: "";
-    border: 10px solid transparent;
-    border-top: 10px solid $secondary;
-    border-bottom: 10px solid $secondary;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+  /* animation: disappear 50ms 1s forwards;*/
+  .spinner {
+    inset: 0;
     margin: auto;
     position: absolute;
-    inset: 0;
-    z-index: 10;
-    animation: spin 1s forwards;
-  }
-
-  &::after {
-    content: "";
-
-    border: 10px solid transparent;
-    border-top: 10px solid $tertiary;
-    border-bottom: 10px solid $tertiary;
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    margin: auto;
-    position: absolute;
-    inset: 0;
-    z-index: 10;
-    animation: reversespin 1s forwards;
-  }
-
-  .dot {
-    background-color: $primary;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    margin: auto;
-    position: absolute;
-    inset: 0;
-    z-index: 10;
-
-
+    animation: spinner_disappear 400ms 600ms both;
+    &::before {
+      content: "";
+      border: 10px solid transparent;
+      border-top: 10px solid $secondary;
+      border-bottom: 10px solid $secondary;
+      width: 100px;
+      height: 100px;
+      margin: auto;
+      border-radius: 50%;
+      position: absolute;
+      inset: 0;
+      z-index: 10;
+      animation: spin 1s forwards;
+    }
+    &::after {
+      content: "";
+      border: 10px solid transparent;
+      border-top: 10px solid $tertiary;
+      border-bottom: 10px solid $tertiary;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      margin: auto;
+      position: absolute;
+      inset: 0;
+      z-index: 10;
+      animation: reversespin 1s forwards;
+    }
+    .spinner {
+      animation: spinner_disappear 2s 1s forwards;
+    }
   }
 }
 
 @keyframes spin {
+  /*animation spinner qui tourne*/
   from {
-
     transform: rotate(0deg);
   }
-
   to {
-
-    transform: rotate(360deg);
+    transform: rotate(320deg);
   }
 }
 
 @keyframes reversespin {
   from {
-
     transform: rotate(0deg);
   }
-
   to {
-
-    transform: rotate(-450deg);
+    transform: rotate(-490deg);
   }
 }
-
-@keyframes disappear {
-  to {
+@keyframes spinner_disappear {
+  100% {
     transform: scale(0);
   }
 }
 
-
+@keyframes background-disappear {
+  99% {
+    background-color: rgba(255, 255, 255, 0);
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+    background-color: rgba(255, 255, 255, 0);
+  }
+}
 /*HEADER*/
 header {
   position: relative;
-
   .logo {
     box-shadow: 0 1px 5px #c5c5c5;
     >h1
-
     /*logo = titre de la page*/
       {
       display: flex;
@@ -224,34 +195,27 @@ header {
       width: 200px;
       margin: auto;
       padding: 20px 0 10px 0;
-
       img {
         width: 175px;
       }
-
     }
   }
-
   #return {
     position: absolute;
     top: 20px;
     left: 5%;
     font-size: 22px;
     color: black;
-
     &-text {
       display: none;
     }
-
     &:active {
       color: $secondary;
     }
-
     &:hover {
       color: $primary;
     }
   }
-
   .location {
     display: flex;
     align-items: center;
@@ -265,45 +229,41 @@ header {
       margin: 15px;
     }
   }
-
-  .booking {
+   .booking {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 30px 0;
     text-align: center;
     background-color: $lighter-grey;
-
     h2 {
       @extend %titles;
       padding: 0 9%;
       margin: 10px;
     }
-
     p {
       margin: 3px;
       font-size: 1.2rem;
       font-weight: 300;
       padding: 0 5%;
     }
-
     button {
       @include button-style;
       margin: 30px auto;
     }
   }
-
 }
 
-/*________Section 1: FUNCTIONING________*/
-.functioning {
-  margin: 40px 4% 40px 5%;
-
+/*________Section 1: HOW DOES IT WORK________*/
+.howdoesitwork {
+  margin: 40px 4% 40px 5%; 
+  ul{
+    padding: 0;
+  }
   h3 {
     @extend %titles;
     margin-bottom: 0;
   }
-
   .steps-container {
     display: flex;
     align-items: center;
@@ -326,22 +286,18 @@ header {
         color: $primary;
       }
     }
-
     p {
       margin: 5px 0;
     }
-
     .fa-solid {
       color: #777777;
       font-size: 20px;
       position: absolute;
       left: 5%;
     }
-
     .fa-laptop {
       display: none;
     }
-
     .steps-numbers {
       background-color: $primary;
       border-radius: 50%;
@@ -359,11 +315,12 @@ header {
 .restaurants {
   padding: 20px 5% 5% 5%;
   background-color: $lighter-grey;
-
+  li {
+    list-style-type: none;
+  }
   h3 {
     @extend %titles;
   }
-
   &-container {
     position: relative;
     background-color: white;
@@ -371,35 +328,28 @@ header {
     margin: 0 0 20px 0;
     box-shadow: 0px 3px 10px rgba(191, 191, 191, 0.66);
     transition: 0.4s;
-
-
     &:hover {
       transform: scale(1.02);
     }
-
     &__text {
       margin: 16px 15px;
     }
-
     a {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       color: black;
     }
-
     h4 {
       margin: 0 0 3px 0;
       font-size: 19px;
       font-weight: 700;
     }
-
     p {
       margin: 4px 0 0 0;
       font-size: 18px;
       font-weight: 300;
     }
-
     .new {
       position: absolute;
       top: 12px;
@@ -412,14 +362,9 @@ header {
       font-weight: 500;
     }
   }
-
-
-
   .heart {
     @include heart-style
   }
-
-
   img {
     width: 100%;
     height: 200px;
@@ -429,14 +374,13 @@ header {
 }
 
 /*_______________MENU_______________*/
-#background {
+.background-menu {
   img {
     width: 100%;
     height: 300px;
     object-fit: cover;
   }
 }
-
 .menu {
   background-color: $lighter-grey;
   position: relative;
@@ -444,8 +388,6 @@ header {
   border-radius: 50px 50px 0 0;
   padding: 13px 4%;
   max-width: 1200px;
-
-
   .heart {
     @include heart-style;
     position: absolute;
@@ -453,7 +395,6 @@ header {
     top: 35px;
     cursor: pointer;
   }
-
   h2 {
     font-family: shrikhand, sans-serif;
     font-size: 28px;
@@ -461,7 +402,6 @@ header {
     margin-left: 1%;
     font-weight: 400;
   }
-
   h3 {
     font-size: 15px;
     font-weight: 400;
@@ -470,196 +410,174 @@ header {
     padding-bottom: 3px;
     width: 40px;
   }
-
   .three_courses {
     margin-bottom: 40px;
+    &:first-child {
+      animation: appear 500ms 700ms ease-in-out backwards;
+    }
+    &:nth-child(2) {
+      animation: appear 500ms 850ms ease-in-out backwards;
+    }
+    &:nth-child(3) {
+      animation: appear 500ms 1s ease-in-out backwards;
+    }
+  }
+
+  @keyframes appear {
+    from {
+      transform: translateY(10px);
+      opacity: 0
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1
+    }
   }
 
   .courses {
-    &-container{
-    background-color: white;
-    padding: 2px 2.8%;
-    margin: 15px 0;
-    line-height: 5px;
-    position: relative;
-    border-radius: 15px;
-    box-shadow: 0 5px 8px $darker-grey;
-   
-    overflow: hidden;
-      &--delay{
-        &1{
-          animation: appear  500ms 1s  ease-in-out backwards;
-        }
-        &2{
-          animation: appear  500ms  1.1s ease-in-out backwards;
-        }
-        &3{
-          animation: appear  500ms 1.2s  ease-in-out backwards;
-        }
-        &4{
-          animation: appear  500ms 1.3s  ease-in-out backwards;
-        }
-        &5{
-          animation: appear  500ms 1.4s  ease-in-out backwards;
-        }
-        &6{
-          animation: appear  500ms 1.5s  ease-in-out backwards;
-        }
-        &7{
-          animation: appear  500ms 1.6s  ease-in-out backwards;
-        }
-        &8{
-          animation: appear  500ms 1.7s  ease-in-out backwards;
-        }
-        &9{
-          animation: appear  500ms 1.8s  ease-in-out backwards;
-        }
-        &10{
-          animation: appear  500ms 1.9s  ease-in-out backwards;
-        }
-      }
-    @keyframes appear{
-      0%{
-        transform:translateY(10px);
-        opacity:0
-      }
-      100%{
-        transform:translateY(0);
-        opacity:1
-      }
-    }
-    &:hover{
-      cursor: pointer;
-      p{
-        text-overflow: ellipsis;
-      }
-      .check-animation{
-        display: initial;
-        height: 62px;
-        width: 60px;
-        background-color: $tertiary;
-        position: absolute;
-        z-index: 20;
-        right: 0;
-        bottom: 0px;
-        border-radius: 0 10px 10px 0;
-        animation: check .5s ease-in-out both;
-        @keyframes check{
-          0%{
-            transform:scaleX(0);
-            transform-origin:100% 100%;
-            opacity:1
-          }
-          100%{
-            transform:scaleX(1);
-            transform-origin:100% 100%;
-            opacity:1
-          }
-      }
-      .fa-solid{
-        color: white;
-        padding: 21px 19px ;
-        font-size: 20px;
-        animation: rotate 1.2s;
-        @keyframes rotate{
-          0%{
-            transform:rotate(0);
-          }
-          100%{
-            transform:rotate(360deg);
-          }
-        }
-      }
-
-      }
-      .price{
-        animation: price-slide .5s 100ms  both
-      }
-      @keyframes price-slide{
-        0%{
-          transform:translateX(0);
-        }
-          100%{
-            transform:translateX(-50px);
-          }
-        }
-    }
-    .check-animation{
-      display: none;
-    }
-
-    
-    
-
-  
-    .price {
-      
-      font-weight: 600;
-      position: absolute;
-      right: 10px;
-      bottom: 0px ;
-      padding: 28px 10px 18px 10px;
-      color: #363636;
+    &-container {
       background-color: white;
+      padding: 1rem;
+      margin: 15px 0;
+      position: relative;
+      border-radius: 15px;
+      box-shadow: 0 5px 8px $darker-grey;
+      display: flex;
+      align-items: center;
+      height: 4rem;
+      overflow: hidden;
+      .menu-text {
+        width: 80%;
+        margin-right: 10%;
+        line-height: 22px;
+        p {
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          margin: 0;
+          width: 100%
+        }
+      }
+      .price {
+        display: flex;
+        align-items: flex-end;
+        font-weight: 600;
+        font-size: 14px;
+        height: 38px;
+        color: black;
+        background-color: white;
+        padding: 0 0 0 2%;
+        margin: 0 2% 0 0;
+      }
+    &:hover {
+      cursor: pointer;
+      .menu-text {
+        animation: narrowing 1s both;
+        @keyframes narrowing {
+          from {
+            width: 80%;  
+          }
+          to {
+            width: 73.5%;
+            margin: 0;
+          }
+        }
+      }
+      .check-animation {
+        background-color: $tertiary;
+        animation: scale-in-hor-right .5s both;
+        .fa-solid {
+          color: $tertiary;
+          animation: check-rotation 1s both;
+          @keyframes check-rotation {
+            from {
+              transform: rotate(0deg);
+            }
+            to {
+              transform: rotate(360deg);
+            }
+          }
+        }
+      }
+    }
+    .check-animation {
+      background-color: transparent;
+      margin: -1rem -100% -1rem 0;
+      width: 20%;
+      height: 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .fa-solid {
+        color: transparent;
+        padding: 5px;
+        border-radius: 50%;
+        font-size: 15px;
+        background-color: white;
+      }
     }
   }
-    &-name {
-      font-size: 17px;
-      font-weight: 600;
-    }
-    &-description {
-      font-size: 14px;
-      font-weight: 400;
-    }
+  &-name {
+    font-size: 17px;
+    font-weight: 600;
   }
-  button {
-    @include button-style;
-    display: flex;
-    margin: 40px auto;
-    padding: 17px 50px;
+  &-description {
+    font-size: 14px;
+    font-weight: 400;
   }
 }
-  
-
-
+  .order {
+    @include button-style;
+    margin: 40px auto 0 auto;
+    padding: 17px 52px;
+    width: 196px;
+    color: white;
+  }
+}
+@media (min-width:450px) and (max-width:1023px){
+  .courses-container{
+    &:hover {
+      @keyframes narrowing{
+        from{
+          width: 80%;
+        }
+        to{
+          width: 65.5%;
+        }
+      }
+    } 
+  }
+}
 /*___________FOOTER__________*/
 footer {
   background-color: #363636;
   padding: 30px 25px 15px 25px;
-
   .footer-link {
     position: relative;
-
     .margin-left {
       margin-left: 7%;
     }
   }
-
   .footer-text {
     margin-bottom: 30px;
-
   }
-
   img {
     color: white;
     width: 100px;
     margin-bottom: 10px;
   }
-
   .fa-solid {
     font-size: 15px;
     color: white;
     position: absolute;
     left: 0px;
   }
-
   a p {
     color: white;
     font-weight: 500;
     font-size: 16px;
     margin: 6px 0;
   }
-
   p {
     font-size: 12px;
     color: #bcbcbc;
@@ -667,14 +585,13 @@ footer {
     text-align: center;
   }
 }
-
 /*_________________---RESPONSIVE---__________________*/
 
 /*_____________Version Tablet---RESPONSIVE---___________*/
 @media (min-width:500px) {
 
   /*____________PAGE D'ACCUEIL---RESPONSIVE:tablet---__________*/
-  .functioning {
+  .howdoesitwork {
     .steps-container {
       .fa-solid {
         font-size: 25px;
@@ -687,80 +604,72 @@ footer {
       }
     }
   }
-
   .restaurants {
     background-color: transparent;
     padding: 0 5% 3% 5%;
-
     &-list {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
     }
-
     &-container {
       width: 48%
     }
   }
 
+  /*____________PAGE DU MENU---RESPONSIVE:tablet---____________*/
+  .background-menu {
+    img {
+      height: 500px;
+    }
+  }
+
   /*______________FOOTER---RESPONSIVE:tablet---_____________*/
+
   .footer-container {
     .footer-text {
       width: 200px;
-
       .fa-solid {
         left: -10px;
       }
     }
-
     margin: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-
     .margin-left {
       margin-left: 200%;
     }
   }
 
-  /*____________PAGE DU MENU---RESPONSIVE:tablet---____________*/
-  #background {
-    img {
-      height: 500px;
 
-    }
-  }
 }
 
 /*____________________Version Desktop---RESPONSIVE---_____________________*/
 @media (min-width:1024px) {
-
   /*___________PAGE D'ACCUEIL---RESPONSIVE:desktop---___________*/
-  .functioning {
+  %nomargin_extremity {
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  .howdoesitwork {
     .steps-list {
       display: flex;
     }
-
     .steps-container {
+      @extend %nomargin_extremity;
       width: 40%;
-
-      &--no_margin_left {
-        margin-left: 0;
-      }
-
-      &--no_margin_right {
-        margin-right: 0;
-      }
-
       .fa-solid {
         left: 9%;
       }
-
       .fa-laptop {
         display: inline;
         font-size: 20px
       }
-
       .fa-mobile-screen-button {
         display: none;
       }
@@ -769,24 +678,14 @@ footer {
 
   .restaurants {
     margin-bottom: 60px;
-
     &-list {
       flex-wrap: nowrap;
     }
-
     &-container {
       margin: 0 10px;
-
+      @extend %nomargin_extremity;
       img {
         height: 350px;
-      }
-
-      &--no_margin_left {
-        margin-left: 0;
-      }
-
-      &--no_margin_right {
-        margin-right: 0;
       }
     }
   }
@@ -798,11 +697,9 @@ footer {
       top: 10px;
       font-size: 25px;
       padding: 10px;
-
       &:hover {
         border-radius: 25px;
       }
-
       &-text {
         display: initial;
         margin-left: 10px;
@@ -811,36 +708,35 @@ footer {
       }
     }
   }
-
-  #background {
+  .background-menu {
     img {
-      height: 600px;
+      height: 500px;
     }
   }
-
   .menu {
-    margin: -100px auto -0px auto;
-
+    margin: 0px auto 0px auto;
     .menu-container {
       display: flex;
-
     }
-
     .three_courses {
       width: 33%;
       margin: 0 1%;
     }
+    .order {
+      margin: 40px auto;
+    }
+  }
+  .menu-body {
+    background-color: transparent;
   }
 
   /*______________FOOTER---RESPONSIVE:desktop---_____________*/
   footer {
     padding: 50px 0 15px 0;
     margin-top: -50px;
-
     img {
       width: 200px;
     }
-
     .footer-container {
       .footer-text {
         display: flex;
@@ -849,31 +745,25 @@ footer {
         min-width: 992px;
         max-width: 1600px;
       }
-
       .footer-link {
         margin: 20px 40px 40px 40px;
-
         .fa-solid {
           left: -20px;
         }
-
         .margin-left {
           margin-left: 10px;
         }
       }
-
       p {
         border-bottom: 1px solid #363636;
         margin-left: 10px;
         font-size: 17px;
       }
-
       a {
         &:hover {
           p {
             border-bottom: white 1px solid;
           }
-
           .fa-solid {
             color: $secondary;
           }

@@ -13,20 +13,21 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
     integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="icon" type="image/png" href="Images/logo/favicon.png">
+  <link style="border-radius: 20px;" rel="icon" type="image/png" href="Images/logo/favicon.png">
 </head>
 
 <body>
   <!---------------HEADER--------------->
 
   <div class="loader">
-    <div class="dot">
-
+    <div class="spinner">
+      <div class="dot"></div>
     </div>
+
   </div>
 
   <header>
-    <div class="header-top">
+    <div class="top-header">
       <div class="logo">
         <h1>
           <a href="index.html">
@@ -49,26 +50,26 @@
   <!--Main-->
   <main>
     <!--------Section 1: Fonctionnement-------->
-    <section class="functioning">
+    <section class="howdoesitwork">
       <h3>Fonctionnement</h3>
-      <div class="steps-list">
-        <div class="steps-container steps-container--no_margin_left">
+      <ul class="steps-list">
+        <li class="steps-container">
           <span class="steps-numbers">1</span>
           <i class="fa-solid fa-mobile-screen-button"></i>
           <i class="fa-solid fa-laptop"></i>
           <p>Choisissez un restaurant</p>
-        </div>
-        <div class="steps-container">
+        </li>
+        <li class="steps-container">
           <span class="steps-numbers">2</span>
           <i class="fa-solid fa-list"></i>
           <p>Composez votre menu</p>
-        </div>
-        <div class="steps-container steps-container--no_margin_right">
+        </li>
+        <li class="steps-container">
           <span class="steps-numbers">3</span>
           <i class="fa-solid fa-store"></i>
           <p>Dégustez au restaurant</p>
-        </div>
-      </div>
+        </li>
+      </ul>
     </section>
 
     <!--------Section 2: RESTAURANT--------->
@@ -76,7 +77,7 @@
     <section id="explore" class="restaurants">
       <h3>Restaurants</h3>
       <div class="restaurants-list">
-        <div class="restaurants-container restaurants-container--no_margin_left">
+        <li class="restaurants-container">
           <a href="./menu-pages/Resto1-LaPaletteDuGout/index.html">
             <img src="./Images/restaurants/resto1.jpg" alt="Restaurant La palette du goût">
             <div class="new">Nouveau</div>
@@ -103,15 +104,12 @@
               d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z" />
           </svg>
           <defs>
-            <linearGradient id="text-fill">
-              <stop offset="0%" stop-color="#FF79DA" />
-              <stop offset="100%" stop-color="#9356DC" />
-            </linearGradient>
+
 
           </defs>
-        </div>
+        </li>
 
-        <div class="restaurants-container">
+        <li class="restaurants-container">
           <a href="./menu-pages/Resto2-LaNoteEnchantee/index.html">
             <img src=" ./Images/restaurants/resto2.jpg" alt="Restaurant La note enchantée">
             <div class="new">Nouveau</div>
@@ -125,30 +123,20 @@
             stroke="black" fill="white">
             <path
               d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z" />
-            <defs>
-              <linearGradient id="text-fill">
-                <stop offset="0%" stop-color="#FF79DA" />
-                <stop offset="100%" stop-color="#9356DC" />
-              </linearGradient>
-            </defs>
+
           </svg>
           <svg class="heart heart--filled" xmlns="http://www.w3.org/2000/svg" width="28" height="24"
             viewBox="0 0 24 24">
             <path
               d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z" />
-            <defs>
-              <linearGradient id="text-fill">
-                <stop offset="0%" stop-color="#FF79DA" />
-                <stop offset="100%" stop-color="#9356DC" />
-              </linearGradient>
-            </defs>
+
 
           </svg>
-        </div>
+        </li>
 
 
 
-        <div class="restaurants-container">
+        <li class="restaurants-container">
           <a href="./menu-pages/Resto3-ALaFrancaise/index.html">
             <img src="./Images/restaurants/resto3.jpg" alt="Restaurant A la française">
             <div class="restaurants-container__text">
@@ -167,9 +155,9 @@
             <path
               d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z" />
           </svg>
-        </div>
+        </li>
 
-        <div class="restaurants-container restaurants-container--no_margin_right">
+        <li class="restaurants-container">
           <a href="./menu-pages/Resto4-LeDeliceDesSens/index.html">
             <img src="./Images/restaurants/resto4.jpg" alt="Restaurant Le délice des sens">
             <div class="restaurants-container__text">
@@ -188,7 +176,7 @@
             <path
               d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z" />
           </svg>
-        </div>
+        </li>
       </div>
     </section>
   </main>
@@ -221,8 +209,6 @@
           </a>
         </div>
       </div>
-      <p>Copyright © 2016–2022 Ohmyfood.com™. Tous droits réservés.
-      </p>
     </div>
   </footer>
 </body>
