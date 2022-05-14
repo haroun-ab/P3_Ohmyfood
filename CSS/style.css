@@ -1,5 +1,118 @@
+/*__________GENERAL__________*/
+/*Polices*/
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+/*SCSS*/
+/*__________PAGE DE CHARGEMENT__________*/
+/*VARIABLES*/
+/*Couleurs principales*/
+/*Types de gris*/
+/*______MIXINS_____*/
+/*Spinner*/
+/*Style des boutons*/
+/*Titre h2 et h3*/
+.restaurants h3, .howdoesitwork h3, header .booking h2 {
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+/*Animation du coeur*/
+/*Style des boutons*/
+.loader {
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  position: fixed;
+  background-color: rgb(255, 255, 255);
+  animation: background-disappear 1400ms 400ms forwards;
+}
+.loader .spinner {
+  inset: 0;
+  margin: auto;
+  position: absolute;
+  animation: spinner_disappear 500ms 700ms both;
+}
+.loader .spinner::before {
+  content: "";
+  border: 10px solid transparent;
+  border-top: 10px solid #ff79da;
+  border-bottom: 10px solid #ff79da;
+  margin: auto;
+  border-radius: 50%;
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  animation: spin 1.2s forwards;
+  width: 100px;
+  height: 100px;
+}
+.loader .spinner::after {
+  content: "";
+  border: 10px solid transparent;
+  border-top: 10px solid #99e2d0;
+  border-bottom: 10px solid #99e2d0;
+  margin: auto;
+  border-radius: 50%;
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  animation: reversespin 1.2s forwards;
+  width: 70px;
+  height: 70px;
+}
+.loader .spinner .spinner {
+  animation: spinner_disappear 2s 1s forwards;
+}
+
+@keyframes spin {
+  /*animation spinner*/
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(320deg);
+  }
+}
+@keyframes reversespin {
+  /*animation spinner*/
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-490deg);
+  }
+}
+@keyframes spinner_disappear {
+  /*disparition du spinner*/
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes background-disappear {
+  /* disparition du fond de la page de chargement*/
+  99% {
+    background-color: rgba(255, 255, 255, 0);
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+    background-color: rgba(255, 255, 255, 0);
+  }
+}
+/*VARIABLES*/
+/*Couleurs principales*/
+/*Types de gris*/
+/*______MIXINS_____*/
+/*Spinner*/
+/*Style des boutons*/
+/*Titre h2 et h3*/
+.restaurants h3, .howdoesitwork h3, header .booking h2 {
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+/*Animation du coeur*/
+/*Style des boutons*/
 html {
   scroll-behavior: smooth;
 }
@@ -30,90 +143,6 @@ a {
   align-items: center;
 }
 
-.restaurants h3, .howdoesitwork h3, header .booking h2 {
-  font-size: 1.6rem;
-  font-weight: 800;
-}
-
-.loader {
-  width: 100%;
-  height: 100%;
-  z-index: 10;
-  position: fixed;
-  background-color: rgb(255, 255, 255);
-  animation: background-disappear 1400ms 400ms forwards;
-  /* animation: disappear 50ms 1s forwards;*/
-}
-.loader .spinner {
-  inset: 0;
-  margin: auto;
-  position: absolute;
-  animation: spinner_disappear 400ms 600ms both;
-}
-.loader .spinner::before {
-  content: "";
-  border: 10px solid transparent;
-  border-top: 10px solid #ff79da;
-  border-bottom: 10px solid #ff79da;
-  width: 100px;
-  height: 100px;
-  margin: auto;
-  border-radius: 50%;
-  position: absolute;
-  inset: 0;
-  z-index: 10;
-  animation: spin 1s forwards;
-}
-.loader .spinner::after {
-  content: "";
-  border: 10px solid transparent;
-  border-top: 10px solid #99e2d0;
-  border-bottom: 10px solid #99e2d0;
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  margin: auto;
-  position: absolute;
-  inset: 0;
-  z-index: 10;
-  animation: reversespin 1s forwards;
-}
-.loader .spinner .spinner {
-  animation: spinner_disappear 2s 1s forwards;
-}
-
-@keyframes spin {
-  /*animation spinner qui tourne*/
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(320deg);
-  }
-}
-@keyframes reversespin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(-490deg);
-  }
-}
-@keyframes spinner_disappear {
-  100% {
-    transform: scale(0);
-  }
-}
-@keyframes background-disappear {
-  99% {
-    background-color: rgba(255, 255, 255, 0);
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(0);
-    background-color: rgba(255, 255, 255, 0);
-  }
-}
 /*HEADER*/
 header {
   position: relative;
@@ -122,8 +151,6 @@ header .logo {
   box-shadow: 0 1px 5px #c5c5c5;
 }
 header .logo > h1 {
-  display: flex;
-  justify-content: center;
   width: 200px;
   margin: auto;
   padding: 20px 0 10px 0;
@@ -177,7 +204,8 @@ header .booking p {
   font-weight: 300;
   padding: 0 5%;
 }
-header .booking button {
+header .booking .explore-btn {
+  margin: 30px auto;
   border: none;
   background: linear-gradient(355deg, #9356dc, 50%, #ff79da);
   padding: 17px 22px;
@@ -186,13 +214,12 @@ header .booking button {
   font-weight: 500;
   box-shadow: 0px 5px 7px #bfbfbf;
   transition: 0.2s;
-  margin: 30px auto;
 }
-header .booking button a {
+header .booking .explore-btn a {
   color: white;
   margin: 0;
 }
-header .booking button:hover {
+header .booking .explore-btn:hover {
   cursor: pointer;
   transform: scale(1.01);
   box-shadow: 0px 5px 7px #9d9d9d;
@@ -212,7 +239,6 @@ header .booking button:hover {
 .howdoesitwork .steps-container {
   display: flex;
   align-items: center;
-  justify-content: center;
   background-color: #f5f5f5;
   margin: 25px 1% 25px 3%;
   border-radius: 15px;
@@ -236,8 +262,7 @@ header .booking button:hover {
 .howdoesitwork .steps-container .fa-solid {
   color: #777777;
   font-size: 20px;
-  position: absolute;
-  left: 5%;
+  margin: 0 10%;
 }
 .howdoesitwork .steps-container .fa-laptop {
   display: none;
@@ -258,7 +283,10 @@ header .booking button:hover {
   padding: 20px 5% 5% 5%;
   background-color: #f5f5f5;
 }
-.restaurants li {
+.restaurants ul {
+  padding: 0;
+}
+.restaurants ul li {
   list-style-type: none;
 }
 .restaurants-container {
@@ -321,7 +349,7 @@ header .booking button:hover {
   z-index: 0;
   fill: transparent;
   stroke: #0c0c0c;
-  stroke-width: 0.1vw;
+  stroke-width: 1.5px;
 }
 .restaurants .heart--filled:hover {
   fill: url(#text-fill);
@@ -382,7 +410,7 @@ header .booking button:hover {
   z-index: 0;
   fill: transparent;
   stroke: #0c0c0c;
-  stroke-width: 0.1vw;
+  stroke-width: 1.5px;
 }
 .menu .heart--filled:hover {
   fill: url(#text-fill);
@@ -417,13 +445,13 @@ header .booking button:hover {
   margin-bottom: 40px;
 }
 .menu .three_courses:first-child {
-  animation: appear 500ms 700ms ease-in-out backwards;
+  animation: appear 700ms 800ms ease-in-out backwards;
 }
 .menu .three_courses:nth-child(2) {
-  animation: appear 500ms 850ms ease-in-out backwards;
+  animation: appear 700ms 950ms ease-in-out backwards;
 }
 .menu .three_courses:nth-child(3) {
-  animation: appear 500ms 1s ease-in-out backwards;
+  animation: appear 700ms 1100ms ease-in-out backwards;
 }
 @keyframes appear {
   from {
@@ -448,8 +476,8 @@ header .booking button:hover {
   overflow: hidden;
 }
 .menu .courses-container .menu-text {
-  width: 80%;
-  margin-right: 10%;
+  width: 85%;
+  margin-right: 8%;
   line-height: 22px;
 }
 .menu .courses-container .menu-text p {
@@ -478,7 +506,7 @@ header .booking button:hover {
 }
 @keyframes narrowing {
   from {
-    width: 80%;
+    width: 85%;
   }
   to {
     width: 73.5%;
@@ -526,6 +554,7 @@ header .booking button:hover {
   font-weight: 400;
 }
 .menu .order {
+  margin: 40px auto 0 auto;
   border: none;
   background: linear-gradient(355deg, #9356dc, 50%, #ff79da);
   padding: 17px 22px;
@@ -534,7 +563,6 @@ header .booking button:hover {
   font-weight: 500;
   box-shadow: 0px 5px 7px #bfbfbf;
   transition: 0.2s;
-  margin: 40px auto 0 auto;
   padding: 17px 52px;
   width: 196px;
   color: white;
@@ -556,7 +584,7 @@ header .booking button:hover {
       width: 80%;
     }
     to {
-      width: 65.5%;
+      width: 67.5%;
     }
   }
 }
@@ -602,6 +630,15 @@ footer p {
 /*_____________Version Tablet---RESPONSIVE---___________*/
 @media (min-width: 500px) {
   /*____________PAGE D'ACCUEIL---RESPONSIVE:tablet---__________*/
+  .howdoesitwork .steps-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .howdoesitwork .steps-container {
+    width: 62%;
+    margin: 7px auto;
+  }
   .howdoesitwork .steps-container .fa-solid {
     font-size: 25px;
     left: 17%;
@@ -646,6 +683,17 @@ footer p {
     margin-left: 200%;
   }
 }
+/*correctif de l'animation du check pour la version TABLET*/
+@media (min-width: 450px) and (max-width: 1023px) {
+  @keyframes narrowing {
+    from {
+      width: 80%;
+    }
+    to {
+      width: 67.5%;
+    }
+  }
+}
 /*____________________Version Desktop---RESPONSIVE---_____________________*/
 @media (min-width: 1024px) {
   /*___________PAGE D'ACCUEIL---RESPONSIVE:desktop---___________*/
@@ -657,10 +705,11 @@ footer p {
   }
 
   .howdoesitwork .steps-list {
-    display: flex;
+    flex-direction: row;
   }
   .howdoesitwork .steps-container {
-    width: 40%;
+    width: 31.6%;
+    margin-right: 2%;
   }
   .howdoesitwork .steps-container .fa-solid {
     left: 9%;
@@ -711,10 +760,10 @@ footer p {
     margin: 0px auto 0px auto;
   }
   .menu .menu-container {
-    display: flex;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
   }
   .menu .three_courses {
-    width: 33%;
     margin: 0 1%;
   }
   .menu .order {

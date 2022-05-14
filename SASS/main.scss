@@ -1,12 +1,14 @@
+/*__________GENERAL__________*/
+/*Polices*/
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 
-$primary: #9356dc;
-$secondary: #ff79da;
-$tertiary: #99e2d0;
+/*SCSS*/
+@import "./_loading-page";
 
-$lighter-grey: #f5f5f5;
-$darker-grey: #72727228;
+@import "./_variables";
+@import "./_mixins";
+@import "./_placeholders";
 
 html {
   scroll-behavior: smooth;
@@ -14,8 +16,7 @@ html {
 
 * {
   box-sizing: border-box;
-  font-family: "Roboto",
-    sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 body {
@@ -39,159 +40,13 @@ a {
   align-items: center;
 }
 
-%titles {
-  font-size: 1.6rem;
-  font-weight: 800;
-}
-
-@mixin button-style {
-  border: none;
-  background: linear-gradient(355deg, $primary, 50%, $secondary);
-  padding: 17px 22px;
-  border-radius: 50px;
-  font-size: 1.05rem;
-  font-weight: 500;
-  box-shadow: 0px 5px 7px #bfbfbf;
-  transition: 0.2s;
-  a {
-    color: white;
-    margin: 0;
-  }
-  &:hover {
-    cursor: pointer;
-    transform: scale(1.01);
-    box-shadow: 0px 5px 7px #9d9d9d;
-    background: linear-gradient(355deg, #9c61e4, 50%, #fd85db);
-  }
-}
-
-@mixin heart-style {
-  position: absolute;
-  right: 10px;
-  bottom: 32px;
-  cursor: pointer;
-  background: none;
-  stroke: none;
-  &--empty {
-    z-index: 1;
-    fill: transparent;
-    &:hover {
-      display: none;
-    }
-  }
-  &--filled {
-    z-index: 0;
-    fill: transparent;
-    stroke: #0c0c0c;
-    stroke-width: 0.1vw;
-    &:hover {
-      fill: url(#text-fill);
-      z-index: 1;
-      stroke: none;
-      animation: scale-up 300ms both;
-      @keyframes scale-up {
-        0% {
-          transform: scale(0.7)
-        }
-        100% {
-          transform: scale(1.1)
-        }
-      }
-    }
-  }
-}
-.loader {
-  width: 100%;
-  height: 100%;
-  z-index: 10;
-  position: fixed;
-  background-color: rgb(255, 255, 255);
-  animation: background-disappear 1400ms 400ms forwards;
-
-  /* animation: disappear 50ms 1s forwards;*/
-  .spinner {
-    inset: 0;
-    margin: auto;
-    position: absolute;
-    animation: spinner_disappear 400ms 600ms both;
-    &::before {
-      content: "";
-      border: 10px solid transparent;
-      border-top: 10px solid $secondary;
-      border-bottom: 10px solid $secondary;
-      width: 100px;
-      height: 100px;
-      margin: auto;
-      border-radius: 50%;
-      position: absolute;
-      inset: 0;
-      z-index: 10;
-      animation: spin 1s forwards;
-    }
-    &::after {
-      content: "";
-      border: 10px solid transparent;
-      border-top: 10px solid $tertiary;
-      border-bottom: 10px solid $tertiary;
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      margin: auto;
-      position: absolute;
-      inset: 0;
-      z-index: 10;
-      animation: reversespin 1s forwards;
-    }
-    .spinner {
-      animation: spinner_disappear 2s 1s forwards;
-    }
-  }
-}
-
-@keyframes spin {
-  /*animation spinner qui tourne*/
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(320deg);
-  }
-}
-
-@keyframes reversespin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(-490deg);
-  }
-}
-@keyframes spinner_disappear {
-  100% {
-    transform: scale(0);
-  }
-}
-
-@keyframes background-disappear {
-  99% {
-    background-color: rgba(255, 255, 255, 0);
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(0);
-    background-color: rgba(255, 255, 255, 0);
-  }
-}
 /*HEADER*/
 header {
   position: relative;
   .logo {
     box-shadow: 0 1px 5px #c5c5c5;
     >h1
-    /*logo = titre de la page*/
-      {
-      display: flex;
-      justify-content: center;
+    /*logo = titre de la page*/ {
       width: 200px;
       margin: auto;
       padding: 20px 0 10px 0;
@@ -229,7 +84,7 @@ header {
       margin: 15px;
     }
   }
-   .booking {
+  .booking {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -247,17 +102,16 @@ header {
       font-weight: 300;
       padding: 0 5%;
     }
-    button {
-      @include button-style;
-      margin: 30px auto;
+    .explore-btn {
+      @include button-style(30px auto);
     }
   }
 }
 
 /*________Section 1: HOW DOES IT WORK________*/
 .howdoesitwork {
-  margin: 40px 4% 40px 5%; 
-  ul{
+  margin: 40px 4% 40px 5%;
+  ul {
     padding: 0;
   }
   h3 {
@@ -267,7 +121,6 @@ header {
   .steps-container {
     display: flex;
     align-items: center;
-    justify-content: center;
     background-color: $lighter-grey;
     margin: 25px 1% 25px 3%;
     border-radius: 15px;
@@ -292,8 +145,7 @@ header {
     .fa-solid {
       color: #777777;
       font-size: 20px;
-      position: absolute;
-      left: 5%;
+      margin: 0 10%;
     }
     .fa-laptop {
       display: none;
@@ -315,8 +167,12 @@ header {
 .restaurants {
   padding: 20px 5% 5% 5%;
   background-color: $lighter-grey;
-  li {
-    list-style-type: none;
+
+  ul {
+    padding: 0;
+    li {
+      list-style-type: none;
+    }
   }
   h3 {
     @extend %titles;
@@ -363,7 +219,7 @@ header {
     }
   }
   .heart {
-    @include heart-style
+    @include heart-style;
   }
   img {
     width: 100%;
@@ -413,24 +269,24 @@ header {
   .three_courses {
     margin-bottom: 40px;
     &:first-child {
-      animation: appear 500ms 700ms ease-in-out backwards;
+      animation: appear 700ms 800ms ease-in-out backwards;
     }
     &:nth-child(2) {
-      animation: appear 500ms 850ms ease-in-out backwards;
+      animation: appear 700ms 950ms ease-in-out backwards;
     }
     &:nth-child(3) {
-      animation: appear 500ms 1s ease-in-out backwards;
+      animation: appear 700ms 1100ms ease-in-out backwards;
     }
   }
 
   @keyframes appear {
     from {
       transform: translateY(10px);
-      opacity: 0
+      opacity: 0;
     }
     to {
       transform: translateY(0);
-      opacity: 1
+      opacity: 1;
     }
   }
 
@@ -447,15 +303,15 @@ header {
       height: 4rem;
       overflow: hidden;
       .menu-text {
-        width: 80%;
-        margin-right: 10%;
+        width: 85%;
+        margin-right: 8%;
         line-height: 22px;
         p {
           white-space: nowrap;
           text-overflow: ellipsis;
           overflow: hidden;
           margin: 0;
-          width: 100%
+          width: 100%;
         }
       }
       .price {
@@ -469,83 +325,83 @@ header {
         padding: 0 0 0 2%;
         margin: 0 2% 0 0;
       }
-    &:hover {
-      cursor: pointer;
-      .menu-text {
-        animation: narrowing 1s both;
-        @keyframes narrowing {
-          from {
-            width: 80%;  
+      &:hover {
+        cursor: pointer;
+        .menu-text {
+          animation: narrowing 1s both;
+          @keyframes narrowing {
+            from {
+              width: 85%;
+            }
+            to {
+              width: 73.5%;
+              margin: 0;
+            }
           }
-          to {
-            width: 73.5%;
-            margin: 0;
+        }
+        .check-animation {
+          background-color: $tertiary;
+          animation: scale-in-hor-right 0.5s both;
+          .fa-solid {
+            color: $tertiary;
+            animation: check-rotation 1s both;
+            @keyframes check-rotation {
+              from {
+                transform: rotate(0deg);
+              }
+              to {
+                transform: rotate(360deg);
+              }
+            }
           }
         }
       }
       .check-animation {
-        background-color: $tertiary;
-        animation: scale-in-hor-right .5s both;
+        background-color: transparent;
+        margin: -1rem -100% -1rem 0;
+        width: 20%;
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         .fa-solid {
-          color: $tertiary;
-          animation: check-rotation 1s both;
-          @keyframes check-rotation {
-            from {
-              transform: rotate(0deg);
-            }
-            to {
-              transform: rotate(360deg);
-            }
-          }
+          color: transparent;
+          padding: 5px;
+          border-radius: 50%;
+          font-size: 15px;
+          background-color: white;
         }
       }
     }
-    .check-animation {
-      background-color: transparent;
-      margin: -1rem -100% -1rem 0;
-      width: 20%;
-      height: 4rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      .fa-solid {
-        color: transparent;
-        padding: 5px;
-        border-radius: 50%;
-        font-size: 15px;
-        background-color: white;
-      }
+    &-name {
+      font-size: 17px;
+      font-weight: 600;
+    }
+    &-description {
+      font-size: 14px;
+      font-weight: 400;
     }
   }
-  &-name {
-    font-size: 17px;
-    font-weight: 600;
-  }
-  &-description {
-    font-size: 14px;
-    font-weight: 400;
-  }
-}
   .order {
-    @include button-style;
-    margin: 40px auto 0 auto;
+    @include button-style(40px auto 0 auto);
     padding: 17px 52px;
     width: 196px;
     color: white;
   }
 }
-@media (min-width:450px) and (max-width:1023px){
-  .courses-container{
+
+@media (min-width: 450px) and (max-width: 1023px) {
+  .courses-container {
     &:hover {
-      @keyframes narrowing{
-        from{
+      @keyframes narrowing {
+        from {
           width: 80%;
         }
-        to{
-          width: 65.5%;
+        to {
+          width: 67.5%;
         }
       }
-    } 
+    }
   }
 }
 /*___________FOOTER__________*/
@@ -588,11 +444,17 @@ footer {
 /*_________________---RESPONSIVE---__________________*/
 
 /*_____________Version Tablet---RESPONSIVE---___________*/
-@media (min-width:500px) {
-
+@media (min-width: 500px) {
   /*____________PAGE D'ACCUEIL---RESPONSIVE:tablet---__________*/
   .howdoesitwork {
+    .steps-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
     .steps-container {
+      width: 62%;
+      margin: 7px auto;
       .fa-solid {
         font-size: 25px;
         left: 17%;
@@ -613,7 +475,7 @@ footer {
       justify-content: space-between;
     }
     &-container {
-      width: 48%
+      width: 48%;
     }
   }
 
@@ -641,12 +503,25 @@ footer {
       margin-left: 200%;
     }
   }
-
-
+}
+/*correctif de l'animation du check pour la version TABLET*/
+@media (min-width: 450px) and (max-width: 1023px) {
+  .courses-container {
+    &:hover {
+      @keyframes narrowing {
+        from {
+          width: 80%;
+        }
+        to {
+          width: 67.5%;
+        }
+      }
+    }
+  }
 }
 
 /*____________________Version Desktop---RESPONSIVE---_____________________*/
-@media (min-width:1024px) {
+@media (min-width: 1024px) {
   /*___________PAGE D'ACCUEIL---RESPONSIVE:desktop---___________*/
   %nomargin_extremity {
     &:first-child {
@@ -658,17 +533,18 @@ footer {
   }
   .howdoesitwork {
     .steps-list {
-      display: flex;
+      flex-direction: row;
     }
     .steps-container {
       @extend %nomargin_extremity;
-      width: 40%;
+      width: 31.6%;
+      margin-right: 2%;
       .fa-solid {
         left: 9%;
       }
       .fa-laptop {
         display: inline;
-        font-size: 20px
+        font-size: 20px;
       }
       .fa-mobile-screen-button {
         display: none;
@@ -716,10 +592,10 @@ footer {
   .menu {
     margin: 0px auto 0px auto;
     .menu-container {
-      display: flex;
+      display: grid;
+      grid-template-columns: 33% 33% 33%;
     }
     .three_courses {
-      width: 33%;
       margin: 0 1%;
     }
     .order {

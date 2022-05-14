@@ -1,0 +1,44 @@
+/*Titre h2 et h3*/
+%titles {
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+/*Animation du coeur*/
+@mixin heart-style {
+  position: absolute;
+  right: 10px;
+  bottom: 32px;
+  cursor: pointer;
+  background: none;
+  stroke: none;
+  &--empty {
+    z-index: 1;
+    fill: transparent;
+    &:hover {
+      display: none;
+    }
+  }
+  &--filled {
+    z-index: 0;
+    fill: transparent;
+    stroke: #0c0c0c;
+    stroke-width: 1.5px;
+    &:hover {
+      fill: url(#text-fill);
+      z-index: 1;
+      stroke: none;
+      animation: scale-up 300ms both;
+      @keyframes scale-up {
+        0% {
+          transform: scale(0.7);
+        }
+        100% {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
+
+/*Style des boutons*/

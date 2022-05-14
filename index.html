@@ -1,216 +1,278 @@
 <!DOCTYPE html>
 <html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Ohmyfood - Réservez le menu qui vous convient</menu></title>
+    <link href="./CSS/style.css" rel="stylesheet" type="text/css" />
+    <link href="./CSS/normalize.css" rel="stylesheet" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+      integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="icon" type="image/png" href="Images/logo/favicon.png" />
+  </head>
 
-  <title>Ohmyfood - Réservez le menu qui vous convient</menu>
-  </title>
-  <link href="S_CSS/style.css" rel="stylesheet" type="text/css" />
-  <link href="S_CSS/normalize.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
-    integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link style="border-radius: 20px;" rel="icon" type="image/png" href="Images/logo/favicon.png">
-</head>
+  <body>
+    <!--_________HEADER__________-->
 
-<body>
-  <!---------------HEADER--------------->
-
-  <div class="loader">
-    <div class="spinner">
-      <div class="dot"></div>
-    </div>
-
-  </div>
-
-  <header>
-    <div class="top-header">
-      <div class="logo">
-        <h1>
-          <a href="index.html">
-            <img src="./Images/logo/ohmyfood@2x.svg" srcset="./Images/logo/ohmyfood.png" alt="logo du site Ohmyfood" />
-          </a>
-        </h1>
-      </div>
-      <div class="location">
-        <i class="fa-solid fa-location-dot"></i>
-        <p>Paris, Belleville</p>
+    <div class="loader">
+      <div class="spinner">
+        <div class="dot"></div>
       </div>
     </div>
-    <div class="booking">
-      <h2>Réservez le menu qui vous convient</h2>
-      <p>Découvrez des restaurants d'exception, sélectionnés par nos soins</p>
-      <button type="button"><a href="#explore">Explorer nos restaurants</a></button>
-    </div>
-  </header>
 
-  <!--Main-->
-  <main>
-    <!--------Section 1: Fonctionnement-------->
-    <section class="howdoesitwork">
-      <h3>Fonctionnement</h3>
-      <ul class="steps-list">
-        <li class="steps-container">
-          <span class="steps-numbers">1</span>
-          <i class="fa-solid fa-mobile-screen-button"></i>
-          <i class="fa-solid fa-laptop"></i>
-          <p>Choisissez un restaurant</p>
-        </li>
-        <li class="steps-container">
-          <span class="steps-numbers">2</span>
-          <i class="fa-solid fa-list"></i>
-          <p>Composez votre menu</p>
-        </li>
-        <li class="steps-container">
-          <span class="steps-numbers">3</span>
-          <i class="fa-solid fa-store"></i>
-          <p>Dégustez au restaurant</p>
-        </li>
-      </ul>
-    </section>
-
-    <!--------Section 2: RESTAURANT--------->
-
-    <section id="explore" class="restaurants">
-      <h3>Restaurants</h3>
-      <div class="restaurants-list">
-        <li class="restaurants-container">
-          <a href="./menu-pages/Resto1-LaPaletteDuGout/index.html">
-            <img src="./Images/restaurants/resto1.jpg" alt="Restaurant La palette du goût">
-            <div class="new">Nouveau</div>
-            <div class="restaurants-container__text">
-
-              <h4>La palette du goût</h4>
-              <p>Ménilmontant</p>
-            </div>
-          </a>
-          <svg class="heart heart--empty" xmlns="http://www.w3.org/2000/svg" width="28" height="24" viewBox="0 0 24 24">
-            <path
-              d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z" />
-            <defs>
-              <linearGradient id="text-fill">
-                <stop offset="0%" stop-color="#FF79DA" />
-                <stop offset="100%" stop-color="#9356DC" />
-              </linearGradient>
-            </defs>
-
-          </svg>
-          <svg class="heart heart--filled" xmlns="http://www.w3.org/2000/svg" width="28" height="24"
-            viewBox="0 0 24 24">
-            <path
-              d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z" />
-          </svg>
-          <defs>
-
-
-          </defs>
-        </li>
-
-        <li class="restaurants-container">
-          <a href="./menu-pages/Resto2-LaNoteEnchantee/index.html">
-            <img src=" ./Images/restaurants/resto2.jpg" alt="Restaurant La note enchantée">
-            <div class="new">Nouveau</div>
-            <div class="restaurants-container__text">
-              <h4>La note enchantée</h4>
-              <p>Charonne</p>
-            </div>
-
-          </a>
-          <svg class="heart heart--empty" xmlns="http://www.w3.org/2000/svg" width="28" height="24" viewBox="0 0 24 24"
-            stroke="black" fill="white">
-            <path
-              d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z" />
-
-          </svg>
-          <svg class="heart heart--filled" xmlns="http://www.w3.org/2000/svg" width="28" height="24"
-            viewBox="0 0 24 24">
-            <path
-              d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z" />
-
-
-          </svg>
-        </li>
-
-
-
-        <li class="restaurants-container">
-          <a href="./menu-pages/Resto3-ALaFrancaise/index.html">
-            <img src="./Images/restaurants/resto3.jpg" alt="Restaurant A la française">
-            <div class="restaurants-container__text">
-              <h4>À la française</h4>
-              <p>Cité Rouge</p>
-            </div>
-
-          </a>
-          <svg class="heart heart--empty" xmlns="http://www.w3.org/2000/svg" width="28" height="24" viewBox="0 0 24 24"
-            stroke="black" fill="white">
-            <path
-              d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z" />
-          </svg>
-          <svg class="heart heart--filled" xmlns="http://www.w3.org/2000/svg" width="28" height="24"
-            viewBox="0 0 24 24">
-            <path
-              d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z" />
-          </svg>
-        </li>
-
-        <li class="restaurants-container">
-          <a href="./menu-pages/Resto4-LeDeliceDesSens/index.html">
-            <img src="./Images/restaurants/resto4.jpg" alt="Restaurant Le délice des sens">
-            <div class="restaurants-container__text">
-              <h4>Le délice des sens</h4>
-              <p>Folie-Méricourt</p>
-            </div>
-
-          </a>
-          <svg class="heart heart--empty" xmlns="http://www.w3.org/2000/svg" width="28" height="24" viewBox="0 0 24 24"
-            stroke="black" fill="white">
-            <path
-              d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z" />
-          </svg>
-          <svg class="heart heart--filled" xmlns="http://www.w3.org/2000/svg" width="28" height="24"
-            viewBox="0 0 24 24">
-            <path
-              d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z" />
-          </svg>
-        </li>
-      </div>
-    </section>
-  </main>
-
-  <!---------------FOOTER--------------->
-  <footer>
-    <div class="footer-container">
-      <img src="./Images/logo/ohmyfood-white.png">
-      <div class="footer-text">
-        <div class="footer-link">
-          <a href="#" title="Envoyer une proposition">
-            <i class="fa-solid fa-utensils"></i>
-            <p class="margin-left">Proposer un restaurant</p>
-          </a>
+    <header>
+      <div class="top-header">
+        <div class="logo">
+          <h1>
+            <a href="index.html">
+              <img
+                src="./Images/logo/ohmyfood@2x.svg"
+                srcset="./Images/logo/ohmyfood.png"
+                alt="logo du site Ohmyfood"
+              />
+            </a>
+          </h1>
         </div>
-        <div class="footer-link">
-          <a href="#" title="Rejoignez-nous !">
-            <i class="fa-solid fa-handshake-angle"></i>
-            <p class="margin-left">Devenir partenaire</p>
-          </a>
-        </div>
-        <div class="footer-link">
-          <a href="#" title="Mentions légales">
-            <p>Mentions légales</p>
-          </a>
-        </div>
-        <div class="footer-link">
-          <a href="mailto:ohmyfood@services.com" title="Envoyer un mail à Ohmyfood">
-            <p>Contact</p>
-          </a>
+        <div class="location">
+          <i class="fa-solid fa-location-dot"></i>
+          <p>Paris, Belleville</p>
         </div>
       </div>
-    </div>
-  </footer>
-</body>
+      <div class="booking">
+        <h2>Réservez le menu qui vous convient</h2>
+        <p>Découvrez des restaurants d'exception, sélectionnés par nos soins</p>
+        <div class="explore-btn">
+          <a href="#restaurants">Explorer nos restaurants</a>
+        </div>
+      </div>
+    </header>
 
+    <!--Main-->
+    <main>
+      <!--_________Section 1: FONCTIONNEMENT__________-->
+      <section class="howdoesitwork">
+        <h3>Fonctionnement</h3>
+        <ul class="steps-list">
+          <li class="steps-container">
+            <span class="steps-numbers">1</span>
+            <i class="fa-solid fa-mobile-screen-button"></i>
+            <i class="fa-solid fa-laptop"></i>
+            <p>Choisissez un restaurant</p>
+          </li>
+          <li class="steps-container">
+            <span class="steps-numbers">2</span>
+            <i class="fa-solid fa-list"></i>
+            <p>Composez votre menu</p>
+          </li>
+          <li class="steps-container">
+            <span class="steps-numbers">3</span>
+            <i class="fa-solid fa-store"></i>
+            <p>Dégustez au restaurant</p>
+          </li>
+        </ul>
+      </section>
+
+      <!--_________Section 2: RESTAURANT__________-->
+
+      <section id="restaurants" class="restaurants">
+        <h3>Restaurants</h3>
+        <ul class="restaurants-list">
+          <li class="restaurants-container">
+            <a href="./menu-pages/Resto1-LaPaletteDuGout/index.html">
+              <img
+                src="./Images/restaurants/resto1.jpg"
+                alt="Restaurant La palette du goût"
+              />
+              <div class="new">Nouveau</div>
+              <div class="restaurants-container__text">
+                <h4>La palette du goût</h4>
+                <p>Ménilmontant</p>
+              </div>
+            </a>
+            <svg
+              class="heart heart--empty"
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z"
+              />
+              <defs>
+                <linearGradient id="text-fill">
+                  <stop offset="0%" stop-color="#FF79DA" />
+                  <stop offset="100%" stop-color="#9356DC" />
+                </linearGradient>
+              </defs>
+            </svg>
+            <svg
+              class="heart heart--filled"
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z"
+              />
+            </svg>
+          </li>
+
+          <li class="restaurants-container">
+            <a href="./menu-pages/Resto2-LaNoteEnchantee/index.html">
+              <img
+                src=" ./Images/restaurants/resto2.jpg"
+                alt="Restaurant La note enchantée"
+              />
+              <div class="new">Nouveau</div>
+              <div class="restaurants-container__text">
+                <h4>La note enchantée</h4>
+                <p>Charonne</p>
+              </div>
+            </a>
+            <svg
+              class="heart heart--empty"
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="24"
+              viewBox="0 0 24 24"
+              stroke="black"
+              fill="white"
+            >
+              <path
+                d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z"
+              />
+            </svg>
+            <svg
+              class="heart heart--filled"
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z"
+              />
+            </svg>
+          </li>
+
+          <li class="restaurants-container">
+            <a href="./menu-pages/Resto3-ALaFrancaise/index.html">
+              <img
+                src="./Images/restaurants/resto3.jpg"
+                alt="Restaurant A la française"
+              />
+              <div class="restaurants-container__text">
+                <h4>À la française</h4>
+                <p>Cité Rouge</p>
+              </div>
+            </a>
+            <svg
+              class="heart heart--empty"
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="24"
+              viewBox="0 0 24 24"
+              stroke="black"
+              fill="white"
+            >
+              <path
+                d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z"
+              />
+            </svg>
+            <svg
+              class="heart heart--filled"
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z"
+              />
+            </svg>
+          </li>
+
+          <li class="restaurants-container">
+            <a href="./menu-pages/Resto4-LeDeliceDesSens/index.html">
+              <img
+                src="./Images/restaurants/resto4.jpg"
+                alt="Restaurant Le délice des sens"
+              />
+              <div class="restaurants-container__text">
+                <h4>Le délice des sens</h4>
+                <p>Folie-Méricourt</p>
+              </div>
+            </a>
+            <svg
+              class="heart heart--empty"
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="24"
+              viewBox="0 0 24 24"
+              stroke="black"
+              fill="white"
+            >
+              <path
+                d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z"
+              />
+            </svg>
+            <svg
+              class="heart heart--filled"
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z"
+              />
+            </svg>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <!--_________FOOTER__________-->
+    <footer>
+      <div class="footer-container">
+        <img src="./Images/logo/ohmyfood-white.png" alt="logo de Ohmyfood" />
+        <div class="footer-text">
+          <div class="footer-link">
+            <a href="#" title="Envoyer une proposition">
+              <i class="fa-solid fa-utensils"></i>
+              <p class="margin-left">Proposer un restaurant</p>
+            </a>
+          </div>
+          <div class="footer-link">
+            <a href="#" title="Rejoignez-nous !">
+              <i class="fa-solid fa-handshake-angle"></i>
+              <p class="margin-left">Devenir partenaire</p>
+            </a>
+          </div>
+          <div class="footer-link">
+            <a href="#" title="Mentions légales">
+              <p>Mentions légales</p>
+            </a>
+          </div>
+          <div class="footer-link">
+            <a
+              href="mailto:ohmyfood@services.com"
+              title="Envoyer un mail à Ohmyfood"
+            >
+              <p>Contact</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
