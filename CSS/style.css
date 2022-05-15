@@ -3,21 +3,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 /*SCSS*/
-/*__________PAGE DE CHARGEMENT__________*/
-/*VARIABLES*/
-/*Couleurs principales*/
-/*Types de gris*/
-/*______MIXINS_____*/
-/*Spinner*/
-/*Style des boutons*/
-/*Titre h2 et h3*/
 .restaurants h3, .howdoesitwork h3, header .booking h2 {
   font-size: 1.6rem;
   font-weight: 800;
 }
 
-/*Animation du coeur*/
-/*Style des boutons*/
 .loader {
   width: 100%;
   height: 100%;
@@ -65,7 +55,6 @@
 }
 
 @keyframes spin {
-  /*animation spinner*/
   from {
     transform: rotate(0deg);
   }
@@ -74,7 +63,6 @@
   }
 }
 @keyframes reversespin {
-  /*animation spinner*/
   from {
     transform: rotate(0deg);
   }
@@ -83,13 +71,11 @@
   }
 }
 @keyframes spinner_disappear {
-  /*disparition du spinner*/
   100% {
     transform: scale(0);
   }
 }
 @keyframes background-disappear {
-  /* disparition du fond de la page de chargement*/
   99% {
     background-color: rgba(255, 255, 255, 0);
     transform: scale(1);
@@ -99,20 +85,11 @@
     background-color: rgba(255, 255, 255, 0);
   }
 }
-/*VARIABLES*/
-/*Couleurs principales*/
-/*Types de gris*/
-/*______MIXINS_____*/
-/*Spinner*/
-/*Style des boutons*/
-/*Titre h2 et h3*/
 .restaurants h3, .howdoesitwork h3, header .booking h2 {
   font-size: 1.6rem;
   font-weight: 800;
 }
 
-/*Animation du coeur*/
-/*Style des boutons*/
 html {
   scroll-behavior: smooth;
 }
@@ -154,6 +131,8 @@ header .logo > h1 {
   width: 200px;
   margin: auto;
   padding: 20px 0 10px 0;
+  display: flex;
+  justify-content: center;
 }
 header .logo > h1 img {
   width: 175px;
@@ -182,9 +161,26 @@ header .location {
   font-size: 17px;
   font-weight: 600;
   color: #343434;
+  padding-left: 20px;
 }
-header .location p {
-  margin: 15px;
+header .location input {
+  background-color: transparent;
+  border: none;
+  font-weight: 600;
+  color: #343434;
+  margin: 8px;
+  padding: 8px 5px;
+  display: flex;
+  justify-content: center;
+  width: 150px;
+  outline: none;
+  border-radius: 8px;
+}
+header .location input::-webkit-search-cancel-button {
+  display: none;
+}
+header .location input:hover, header .location input:focus {
+  background-color: rgb(248, 248, 248);
 }
 header .booking {
   display: flex;
@@ -445,13 +441,13 @@ header .booking .explore-btn:hover {
   margin-bottom: 40px;
 }
 .menu .three_courses:first-child {
-  animation: appear 700ms 800ms ease-in-out backwards;
+  animation: appear 1s 800ms ease-in-out backwards;
 }
 .menu .three_courses:nth-child(2) {
-  animation: appear 700ms 950ms ease-in-out backwards;
+  animation: appear 1s 1s ease-in-out backwards;
 }
 .menu .three_courses:nth-child(3) {
-  animation: appear 700ms 1100ms ease-in-out backwards;
+  animation: appear 1s 1.2s ease-in-out backwards;
 }
 @keyframes appear {
   from {
@@ -578,13 +574,13 @@ header .booking .explore-btn:hover {
   background: linear-gradient(355deg, #9c61e4, 50%, #fd85db);
 }
 
-@media (min-width: 450px) and (max-width: 1023px) {
+@media (min-width: 40px) and (max-width: 1023px) {
   @keyframes narrowing {
     from {
       width: 80%;
     }
     to {
-      width: 67.5%;
+      width: 66%;
     }
   }
 }
