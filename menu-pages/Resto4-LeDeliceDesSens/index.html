@@ -27,10 +27,13 @@
       <div class="header-top">
         <div class="logo">
           <h1>
-            <a href="../../index.html">
+            <a href="index.html">
               <img
                 src="../../Images/logo/ohmyfood@2x.svg"
-                srcset="../../Images/logo/ohmyfood.png"
+                srcset="
+                  ../../Images/logo/ohmyfood@2x.svg 2x,
+                  ../../Images/logo/ohmyfood.png
+                "
                 alt="logo du site Ohmyfood"
               />
             </a>
@@ -42,187 +45,192 @@
         >
       </div>
     </header>
-    <!--__________IMAGE DE FOND__________-->
-    <div class="background-menu">
-      <img
-        src="../../Images/restaurants/resto4.jpg"
-        alt="restaurant Le délice des sens"
-      />
-    </div>
+
     <!--__________MENU__________-->
-    <section class="menu">
-      <h2>Le délice des sens</h2>
-      <!--animation coeur-->
-      <svg
-        class="heart heart--empty"
-        xmlns="http://www.w3.org/2000/svg"
-        width="28"
-        height="24"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z"
+    <main class="no_max-width">
+      <!--__________IMAGE DE FOND__________-->
+      <div class="background-menu">
+        <img
+          src="../../Images/restaurants/resto1.jpg"
+          alt="restaurant La palette du goût"
         />
-        <defs>
-          <linearGradient id="text-fill">
-            <stop offset="0%" stop-color="#FF79DA" />
-            <stop offset="100%" stop-color="#9356DC" />
-          </linearGradient>
-        </defs>
-      </svg>
-      <svg
-        class="heart heart--filled"
-        xmlns="http://www.w3.org/2000/svg"
-        width="28"
-        height="24"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z"
-        />
-      </svg>
-      <!--menu du restaurants-->
-      <div class="menu-container">
-        <div class="three_courses">
-          <h3>ENTREES</h3>
-          <div class="courses-container">
-            <div class="menu-text">
-              <p class="courses-name" title="Tartare de thon">
-                Tartare de thon
-              </p>
-              <p class="courses-description" title="Assaisonné au yuzu">
-                Assaisonné au yuzu
-              </p>
-            </div>
-            <span class="price">25€</span>
-            <div class="check-animation">
-              <i class="fa-solid fa-check"></i>
-            </div>
-          </div>
-          <div class="courses-container">
-            <div class="menu-text">
-              <p class="courses-name" title="Bouchée de homard croustillant">
-                Bouchée de homard croustillant
-              </p>
-              <p
-                class="courses-description"
-                title="Et sa farandole de petits légumes"
-              >
-                Et sa farandole de petits légumes
-              </p>
-            </div>
-            <span class="price">35€</span>
-            <div class="check-animation">
-              <i class="fa-solid fa-check"></i>
-            </div>
-          </div>
-          <div class="courses-container">
-            <div class="menu-text">
-              <p class="courses-name" title="Velouté de cèpe">
-                Velouté de cèpes
-              </p>
-              <p class="courses-description" title="Aux truffes">Aux truffes</p>
-            </div>
-            <span class="price">20€</span>
-            <div class="check-animation">
-              <i class="fa-solid fa-check"></i>
-            </div>
-          </div>
-        </div>
-
-        <div class="three_courses">
-          <h3>PLATS</h3>
-          <div class="courses-container">
-            <div class="menu-text">
-              <p
-                class="courses-name"
-                title="Poulet rôti aux herbes de Provence"
-              >
-                Poulet rôti aux herbes de Provence
-              </p>
-              <p class="courses-description" title="Et sa crème de truffe">
-                Et sa crème de truffe
-              </p>
-            </div>
-            <span class="price">40€</span>
-            <div class="check-animation">
-              <i class="fa-solid fa-check"></i>
-            </div>
-          </div>
-          <div class="courses-container">
-            <div class="menu-text">
-              <p class="courses-name" title="Langouste rôtie">
-                Langouste rôtie
-              </p>
-              <p class="courses-description" title="Et ses légumes de saison">
-                Et ses légumes de saison
-              </p>
-            </div>
-            <span class="price">35€</span>
-            <div class="check-animation">
-              <i class="fa-solid fa-check"></i>
-            </div>
-          </div>
-          <div class="courses-container">
-            <div class="menu-text">
-              <p class="courses-name" title="Côte de boeuf Angus">
-                Côte de boeuf Angus
-              </p>
-              <p class="courses-description" title="Et sa purée de panais">
-                Et sa purée de panais
-              </p>
-            </div>
-            <span class="price">44€</span>
-            <div class="check-animation">
-              <i class="fa-solid fa-check"></i>
-            </div>
-          </div>
-        </div>
-
-        <div class="three_courses">
-          <h3>DESSERTS</h3>
-          <div class="courses-container">
-            <div class="menu-text">
-              <p class="courses-name" title="Farandole de desserts">
-                Farandole de desserts
-              </p>
-              <p class="courses-description" title="Du chef">Du chef</p>
-            </div>
-            <span class="price">18€</span>
-            <div class="check-animation">
-              <i class="fa-solid fa-check"></i>
-            </div>
-          </div>
-          <div class="courses-container">
-            <div class="menu-text">
-              <p class="courses-name" title="Crème brulée">Crème brulée</p>
-              <p class="courses-description" title="Revisitée">Revisitée</p>
-            </div>
-            <span class="price">22€</span>
-            <div class="check-animation">
-              <i class="fa-solid fa-check"></i>
-            </div>
-          </div>
-          <div class="courses-container">
-            <div class="menu-text">
-              <p class="courses-name" title="Tiramisu">Tiramisu</p>
-              <p class="courses-description" title="À la noisette">
-                À la noisette
-              </p>
-            </div>
-            <span class="price">23€</span>
-            <div class="check-animation">
-              <i class="fa-solid fa-check"></i>
-            </div>
-          </div>
-        </div>
       </div>
+      <section class="menu-main">
+        <h2>Le délice des sens</h2>
+        <!--animation coeur-->
+        <svg
+          class="heart heart--empty"
+          xmlns="http://www.w3.org/2000/svg"
+          width="28"
+          height="24"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z"
+          />
+          <defs>
+            <linearGradient id="text-fill">
+              <stop offset="0%" stop-color="#FF79DA" />
+              <stop offset="100%" stop-color="#9356DC" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <svg
+          class="heart heart--filled"
+          xmlns="http://www.w3.org/2000/svg"
+          width="28"
+          height="24"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z"
+          />
+        </svg>
+        <!--menu du restaurants-->
+        <div class="menu-container">
+          <section class="three_courses">
+            <h3>entrées</h3>
+            <div class="courses-container">
+              <div class="courses-text">
+                <h4 class="courses-name" title="Tartare de thon">
+                  Tartare de thon
+                </h4>
+                <p class="courses-description" title="Assaisonné au yuzu">
+                  Assaisonné au yuzu
+                </p>
+              </div>
+              <span class="price">25€</span>
+              <div class="check-animation">
+                <i class="fa-solid fa-check"></i>
+              </div>
+            </div>
+            <div class="courses-container">
+              <div class="courses-text">
+                <h4 class="courses-name" title="Bouchée de homard croustillant">
+                  Bouchée de homard croustillant
+                </h4>
+                <p
+                  class="courses-description"
+                  title="Et sa farandole de petits légumes"
+                >
+                  Et sa farandole de petits légumes
+                </p>
+              </div>
+              <span class="price">35€</span>
+              <div class="check-animation">
+                <i class="fa-solid fa-check"></i>
+              </div>
+            </div>
+            <div class="courses-container">
+              <div class="courses-text">
+                <h4 class="courses-name" title="Velouté de cèpe">
+                  Velouté de cèpes
+                </h4>
+                <p class="courses-description" title="Aux truffes">
+                  Aux truffes
+                </p>
+              </div>
+              <span class="price">20€</span>
+              <div class="check-animation">
+                <i class="fa-solid fa-check"></i>
+              </div>
+            </div>
+          </section>
 
-      <div class="order">
-        <!--bouton commander-->
-        <a class="order-link" href="#">Commander</a>
-      </div>
-    </section>
+          <section class="three_courses">
+            <h3>plats</h3>
+            <div class="courses-container">
+              <div class="courses-text">
+                <h4
+                  class="courses-name"
+                  title="Poulet rôti aux herbes de Provence"
+                >
+                  Poulet rôti aux herbes de Provence
+                </h4>
+                <p class="courses-description" title="Et sa crème de truffe">
+                  Et sa crème de truffe
+                </p>
+              </div>
+              <span class="price">40€</span>
+              <div class="check-animation">
+                <i class="fa-solid fa-check"></i>
+              </div>
+            </div>
+            <div class="courses-container">
+              <div class="courses-text">
+                <h4 class="courses-name" title="Langouste rôtie">
+                  Langouste rôtie
+                </h4>
+                <p class="courses-description" title="Et ses légumes de saison">
+                  Et ses légumes de saison
+                </p>
+              </div>
+              <span class="price">35€</span>
+              <div class="check-animation">
+                <i class="fa-solid fa-check"></i>
+              </div>
+            </div>
+            <div class="courses-container">
+              <div class="courses-text">
+                <h4 class="courses-name" title="Côte de boeuf Angus">
+                  Côte de boeuf Angus
+                </h4>
+                <p class="courses-description" title="Et sa purée de panais">
+                  Et sa purée de panais
+                </p>
+              </div>
+              <span class="price">44€</span>
+              <div class="check-animation">
+                <i class="fa-solid fa-check"></i>
+              </div>
+            </div>
+          </section>
+
+          <section class="three_courses">
+            <h3>desserts</h3>
+            <div class="courses-container">
+              <div class="courses-text">
+                <h4 class="courses-name" title="Farandole de desserts">
+                  Farandole de desserts
+                </h4>
+                <p class="courses-description" title="Du chef">Du chef</p>
+              </div>
+              <span class="price">18€</span>
+              <div class="check-animation">
+                <i class="fa-solid fa-check"></i>
+              </div>
+            </div>
+            <div class="courses-container">
+              <div class="courses-text">
+                <h4 class="courses-name" title="Crème brulée">Crème brulée</h4>
+                <p class="courses-description" title="Revisitée">Revisitée</p>
+              </div>
+              <span class="price">22€</span>
+              <div class="check-animation">
+                <i class="fa-solid fa-check"></i>
+              </div>
+            </div>
+            <div class="courses-container">
+              <div class="courses-text">
+                <h4 class="courses-name" title="Tiramisu">Tiramisu</h4>
+                <p class="courses-description" title="À la noisette">
+                  À la noisette
+                </p>
+              </div>
+              <span class="price">23€</span>
+              <div class="check-animation">
+                <i class="fa-solid fa-check"></i>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="order">
+          <!--bouton commander-->
+          <a class="order-link" href="#">Commander</a>
+        </div>
+      </section>
+    </main>
     <!--__________FOOTER__________-->
     <footer>
       <div class="footer-container">

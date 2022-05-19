@@ -8,6 +8,51 @@
   font-weight: 800;
 }
 
+.menu-main .courses-container .check-animation, header .booking, header .location input, header .location {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-main .courses-container .courses-text p, .menu-main .courses-container .courses-text h4 {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  color: black;
+  min-width: 360px;
+}
+
+.menu-body {
+  background-color: #f5f5f5;
+}
+
+main {
+  max-width: 1600px;
+  margin: auto;
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+/*________PAGE DE CHARGEMENT_______*/
 .loader {
   width: 100%;
   height: 100%;
@@ -85,41 +130,6 @@
     background-color: rgba(255, 255, 255, 0);
   }
 }
-.restaurants h3, .howdoesitwork h3, header .booking h2 {
-  font-size: 1.6rem;
-  font-weight: 800;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-* {
-  box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
-}
-
-body {
-  color: black;
-  min-width: 360px;
-}
-
-.menu-body {
-  background-color: #f5f5f5;
-}
-
-main {
-  max-width: 1600px;
-  margin: auto;
-  position: relative;
-}
-
-a {
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-}
-
 /*HEADER*/
 header {
   position: relative;
@@ -154,9 +164,6 @@ header #return:hover {
   color: #9356dc;
 }
 header .location {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background-color: rgba(114, 114, 114, 0.1568627451);
   font-size: 17px;
   font-weight: 600;
@@ -170,8 +177,6 @@ header .location input {
   color: #343434;
   margin: 8px;
   padding: 8px 5px;
-  display: flex;
-  justify-content: center;
   width: 150px;
   outline: none;
   border-radius: 8px;
@@ -183,9 +188,7 @@ header .location input:hover, header .location input:focus {
   background-color: rgb(248, 248, 248);
 }
 header .booking {
-  display: flex;
   flex-direction: column;
-  align-items: center;
   padding: 30px 0;
   text-align: center;
   background-color: #f5f5f5;
@@ -332,33 +335,32 @@ header .booking .explore-btn:hover {
   bottom: 32px;
   cursor: pointer;
   background: none;
-  stroke: none;
 }
 .restaurants .heart--empty {
   z-index: 1;
   fill: transparent;
+  stroke: #0c0c0c;
+  stroke-width: 1.5px;
 }
 .restaurants .heart--empty:hover {
   display: none;
 }
 .restaurants .heart--filled {
-  z-index: 0;
   fill: transparent;
-  stroke: #0c0c0c;
-  stroke-width: 1.5px;
+  stroke: transparent;
+  z-index: 2;
 }
 .restaurants .heart--filled:hover {
   fill: url(#text-fill);
-  z-index: 1;
   stroke: none;
-  animation: scale-up 300ms both;
+  animation: heart-appear 1s backwards;
 }
-@keyframes scale-up {
-  0% {
-    transform: scale(0.7);
+@keyframes heart-appear {
+  from {
+    opacity: 0;
   }
-  100% {
-    transform: scale(1.1);
+  to {
+    opacity: 1;
   }
 }
 .restaurants img {
@@ -368,85 +370,89 @@ header .booking .explore-btn:hover {
   object-fit: cover;
 }
 
-/*_______________MENU_______________*/
+/*_______________MAIN (menu)_______________*/
+.no_max-width_for_menu {
+  max-width: none;
+}
+
 .background-menu img {
   width: 100%;
   height: 300px;
   object-fit: cover;
 }
 
-.menu {
+.menu-main {
   background-color: #f5f5f5;
   position: relative;
   top: -50px;
   border-radius: 50px 50px 0 0;
   padding: 13px 4%;
-  max-width: 1200px;
+  max-width: 1400px;
 }
-.menu .heart {
+.menu-main .heart {
   position: absolute;
   right: 10px;
   bottom: 32px;
   cursor: pointer;
   background: none;
-  stroke: none;
   position: absolute;
   right: 50px;
   top: 35px;
   cursor: pointer;
 }
-.menu .heart--empty {
+.menu-main .heart--empty {
   z-index: 1;
-  fill: transparent;
-}
-.menu .heart--empty:hover {
-  display: none;
-}
-.menu .heart--filled {
-  z-index: 0;
   fill: transparent;
   stroke: #0c0c0c;
   stroke-width: 1.5px;
 }
-.menu .heart--filled:hover {
+.menu-main .heart--empty:hover {
+  display: none;
+}
+.menu-main .heart--filled {
+  fill: transparent;
+  stroke: transparent;
+  z-index: 2;
+}
+.menu-main .heart--filled:hover {
   fill: url(#text-fill);
-  z-index: 1;
   stroke: none;
-  animation: scale-up 300ms both;
+  animation: heart-appear 1s backwards;
 }
-@keyframes scale-up {
-  0% {
-    transform: scale(0.7);
+@keyframes heart-appear {
+  from {
+    opacity: 0;
   }
-  100% {
-    transform: scale(1.1);
+  to {
+    opacity: 1;
   }
 }
-.menu h2 {
+.menu-main h2 {
   font-family: shrikhand, sans-serif;
   font-size: 28px;
   color: #0c0c0c;
   margin-left: 1%;
   font-weight: 400;
 }
-.menu h3 {
+.menu-main h3 {
   font-size: 15px;
   font-weight: 400;
   color: #0c0c0c;
   border-bottom: 3px solid #99e2d0;
   padding-bottom: 3px;
   width: 40px;
+  text-transform: uppercase;
 }
-.menu .three_courses {
+.menu-main .three_courses {
   margin-bottom: 40px;
 }
-.menu .three_courses:first-child {
+.menu-main .three_courses:first-child {
   animation: appear 1s 800ms ease-in-out backwards;
 }
-.menu .three_courses:nth-child(2) {
+.menu-main .three_courses:nth-child(2) {
   animation: appear 1s 1s ease-in-out backwards;
 }
-.menu .three_courses:nth-child(3) {
+.menu-main .three_courses:nth-child(3) {
   animation: appear 1s 1.2s ease-in-out backwards;
 }
 @keyframes appear {
@@ -459,7 +465,7 @@ header .booking .explore-btn:hover {
     opacity: 1;
   }
 }
-.menu .courses-container {
+.menu-main .courses-container {
   background-color: white;
   padding: 1rem;
   margin: 15px 0;
@@ -471,19 +477,21 @@ header .booking .explore-btn:hover {
   height: 4rem;
   overflow: hidden;
 }
-.menu .courses-container .menu-text {
+.menu-main .courses-container .courses-text {
   width: 85%;
-  margin-right: 8%;
+  margin-right: 3%;
   line-height: 22px;
+  transition: 1s;
 }
-.menu .courses-container .menu-text p {
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  margin: 0;
-  width: 100%;
+.menu-main .courses-container .courses-text h4 {
+  font-size: 17px;
+  font-weight: 600;
 }
-.menu .courses-container .price {
+.menu-main .courses-container .courses-text p {
+  font-size: 14px;
+  font-weight: 400;
+}
+.menu-main .courses-container .price {
   display: flex;
   align-items: flex-end;
   font-weight: 600;
@@ -492,64 +500,37 @@ header .booking .explore-btn:hover {
   color: black;
   background-color: white;
   padding: 0 0 0 2%;
-  margin: 0 2% 0 0;
+  margin: 0 3% 0 0;
 }
-.menu .courses-container:hover {
+.menu-main .courses-container:hover {
   cursor: pointer;
 }
-.menu .courses-container:hover .menu-text {
-  animation: narrowing 1s both;
+.menu-main .courses-container:hover .courses-text {
+  width: 73%;
+  margin: 0;
 }
-@keyframes narrowing {
-  from {
-    width: 85%;
-  }
-  to {
-    width: 73.5%;
-    margin: 0;
-  }
-}
-.menu .courses-container:hover .check-animation {
+.menu-main .courses-container:hover .check-animation {
   background-color: #99e2d0;
-  animation: scale-in-hor-right 0.5s both;
-}
-.menu .courses-container:hover .check-animation .fa-solid {
-  color: #99e2d0;
-  animation: check-rotation 1s both;
-}
-@keyframes check-rotation {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-.menu .courses-container .check-animation {
-  background-color: transparent;
   margin: -1rem -100% -1rem 0;
+}
+.menu-main .courses-container:hover .check-animation .fa-solid {
+  transform: rotate(360deg);
+}
+.menu-main .courses-container .check-animation {
+  margin: -1rem -100% -1rem 5%;
   width: 20%;
   height: 4rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-color: #99e2d0;
 }
-.menu .courses-container .check-animation .fa-solid {
-  color: transparent;
+.menu-main .courses-container .check-animation .fa-solid {
+  color: #99e2d0;
   padding: 5px;
   border-radius: 50%;
   font-size: 15px;
   background-color: white;
+  transition: 1s 200ms;
 }
-.menu .courses-name {
-  font-size: 17px;
-  font-weight: 600;
-}
-.menu .courses-description {
-  font-size: 14px;
-  font-weight: 400;
-}
-.menu .order {
+.menu-main .order {
   margin: 40px auto 0 auto;
   border: none;
   background: linear-gradient(355deg, #9356dc, 50%, #ff79da);
@@ -563,27 +544,17 @@ header .booking .explore-btn:hover {
   width: 196px;
   color: white;
 }
-.menu .order a {
+.menu-main .order a {
   color: white;
   margin: 0;
 }
-.menu .order:hover {
+.menu-main .order:hover {
   cursor: pointer;
   transform: scale(1.01);
   box-shadow: 0px 5px 7px #9d9d9d;
   background: linear-gradient(355deg, #9c61e4, 50%, #fd85db);
 }
 
-@media (min-width: 40px) and (max-width: 1023px) {
-  @keyframes narrowing {
-    from {
-      width: 80%;
-    }
-    to {
-      width: 66%;
-    }
-  }
-}
 /*___________FOOTER__________*/
 footer {
   background-color: #363636;
@@ -658,7 +629,10 @@ footer p {
   }
 
   /*____________PAGE DU MENU---RESPONSIVE:tablet---____________*/
-  .background-menu img {
+  .menu-main {
+    padding: 13px 10%;
+  }
+  .menu-main .background-menu img {
     height: 500px;
   }
 
@@ -680,14 +654,20 @@ footer p {
   }
 }
 /*correctif de l'animation du check pour la version TABLET*/
-@media (min-width: 450px) and (max-width: 1023px) {
-  @keyframes narrowing {
-    from {
-      width: 80%;
-    }
-    to {
-      width: 67.5%;
-    }
+@media (min-width: 400px) and (max-width: 1023px) {
+  .menu-main .courses-container:hover .courses-text {
+    width: 72%;
+    margin: 0;
+  }
+  .menu-main .courses-container:hover .check-animation {
+    background-color: #99e2d0;
+    margin: -1rem -100% -1rem 2%;
+  }
+  .menu-main .courses-container:hover .check-animation .fa-solid {
+    transform: rotate(360deg);
+  }
+  .menu-main .courses-container .check-animation {
+    margin: -1rem -100% -1rem 6%;
   }
 }
 /*____________________Version Desktop---RESPONSIVE---_____________________*/
@@ -752,17 +732,18 @@ footer p {
     height: 500px;
   }
 
-  .menu {
+  .menu-main {
+    padding: 13px 2%;
     margin: 0px auto 0px auto;
   }
-  .menu .menu-container {
+  .menu-main .menu-container {
     display: grid;
     grid-template-columns: 33% 33% 33%;
   }
-  .menu .three_courses {
-    margin: 0 1%;
+  .menu-main .three_courses {
+    margin: 0 3%;
   }
-  .menu .order {
+  .menu-main .order {
     margin: 40px auto;
   }
 

@@ -2,3 +2,17 @@
   font-size: 1.6rem;
   font-weight: 800;
 }
+
+%flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%menu-text-style {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
+  margin: 0;
+}

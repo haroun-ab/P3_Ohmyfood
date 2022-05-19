@@ -4,8 +4,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 
 /*SCSS*/
-@import "./_loading-page";
-
 @import "./_variables";
 @import "./_mixins";
 @import "./_placeholders";
@@ -38,6 +36,65 @@ a {
   text-decoration: none;
   display: flex;
   align-items: center;
+}
+/*________PAGE DE CHARGEMENT_______*/
+.loader {
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  position: fixed;
+  background-color: rgb(255, 255, 255);
+  animation: background-disappear 1400ms 400ms forwards;
+
+  .spinner {
+    inset: 0;
+    margin: auto;
+    position: absolute;
+    animation: spinner_disappear 500ms 700ms both;
+    &::before {
+      @include loading-spinner(100px, spin, $secondary);
+    }
+    &::after {
+      @include loading-spinner(70px, reversespin, $tertiary);
+    }
+    .spinner {
+      animation: spinner_disappear 2s 1s forwards;
+    }
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(320deg);
+  }
+}
+
+@keyframes reversespin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-490deg);
+  }
+}
+@keyframes spinner_disappear {
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes background-disappear {
+  99% {
+    background-color: rgba(255, 255, 255, 0);
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+    background-color: rgba(255, 255, 255, 0);
+  }
 }
 
 /*HEADER*/
@@ -74,9 +131,7 @@ header {
     }
   }
   .location {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @extend %flex-center;
     background-color: #72727228;
     font-size: 17px;
     font-weight: 600;
@@ -84,14 +139,13 @@ header {
     padding-left: 20px;
 
     input {
+      @extend %flex-center;
       background-color: transparent;
       border: none;
       font-weight: 600;
       color: #343434;
       margin: 8px;
       padding: 8px 5px;
-      display: flex;
-      justify-content: center;
       width: 150px;
       outline: none;
       border-radius: 8px;
@@ -106,9 +160,8 @@ header {
     }
   }
   .booking {
-    display: flex;
+    @extend %flex-center;
     flex-direction: column;
-    align-items: center;
     padding: 30px 0;
     text-align: center;
     background-color: $lighter-grey;
@@ -250,7 +303,11 @@ header {
   }
 }
 
-/*_______________MENU_______________*/
+/*_______________MAIN (menu)_______________*/
+
+.no_max-width_for_menu {
+  max-width: none;
+}
 .background-menu {
   img {
     width: 100%;
@@ -258,13 +315,14 @@ header {
     object-fit: cover;
   }
 }
-.menu {
+.menu-main {
   background-color: $lighter-grey;
   position: relative;
   top: -50px;
   border-radius: 50px 50px 0 0;
   padding: 13px 4%;
-  max-width: 1200px;
+  max-width: 1400px;
+
   .heart {
     @include heart-style;
     position: absolute;
@@ -286,7 +344,9 @@ header {
     border-bottom: 3px solid $tertiary;
     padding-bottom: 3px;
     width: 40px;
+    text-transform: uppercase;
   }
+
   .three_courses {
     margin-bottom: 40px;
     &:first-child {
@@ -323,16 +383,21 @@ header {
       align-items: center;
       height: 4rem;
       overflow: hidden;
-      .menu-text {
+
+      .courses-text {
         width: 85%;
-        margin-right: 8%;
+        margin-right: 3%;
         line-height: 22px;
+        transition: 1s;
+        h4 {
+          font-size: 17px;
+          font-weight: 600;
+          @extend %menu-text-style;
+        }
         p {
-          white-space: nowrap;
-          text-overflow: ellipsis;
-          overflow: hidden;
-          margin: 0;
-          width: 100%;
+          font-size: 14px;
+          font-weight: 400;
+          @extend %menu-text-style;
         }
       }
       .price {
@@ -344,63 +409,39 @@ header {
         color: black;
         background-color: white;
         padding: 0 0 0 2%;
-        margin: 0 2% 0 0;
+        margin: 0 3% 0 0;
       }
       &:hover {
         cursor: pointer;
-        .menu-text {
-          animation: narrowing 1s both;
-          @keyframes narrowing {
-            from {
-              width: 85%;
-            }
-            to {
-              width: 73.5%;
-              margin: 0;
-            }
-          }
+        .courses-text {
+          width: 73%;
+          margin: 0;
         }
         .check-animation {
           background-color: $tertiary;
-          animation: scale-in-hor-right 0.5s both;
+          margin: -1rem -100% -1rem 0;
           .fa-solid {
-            color: $tertiary;
-            animation: check-rotation 1s both;
-            @keyframes check-rotation {
-              from {
-                transform: rotate(0deg);
-              }
-              to {
-                transform: rotate(360deg);
-              }
-            }
+            transform: rotate(360deg);
           }
         }
       }
       .check-animation {
-        background-color: transparent;
-        margin: -1rem -100% -1rem 0;
+        margin: -1rem -100% -1rem 5%;
         width: 20%;
         height: 4rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        background-color: $tertiary;
+
+        @extend %flex-center;
         .fa-solid {
-          color: transparent;
+          color: $tertiary;
           padding: 5px;
+
           border-radius: 50%;
           font-size: 15px;
           background-color: white;
+          transition: 1s 200ms;
         }
       }
-    }
-    &-name {
-      font-size: 17px;
-      font-weight: 600;
-    }
-    &-description {
-      font-size: 14px;
-      font-weight: 400;
     }
   }
   .order {
@@ -411,20 +452,6 @@ header {
   }
 }
 
-@media (min-width: 40px) and (max-width: 1023px) {
-  .courses-container {
-    &:hover {
-      @keyframes narrowing {
-        from {
-          width: 80%;
-        }
-        to {
-          width: 66%;
-        }
-      }
-    }
-  }
-}
 /*___________FOOTER__________*/
 footer {
   background-color: #363636;
@@ -501,46 +528,53 @@ footer {
   }
 
   /*____________PAGE DU MENU---RESPONSIVE:tablet---____________*/
-  .background-menu {
-    img {
-      height: 500px;
+  .menu-main {
+    padding: 13px 10%;
+    .background-menu {
+      img {
+        height: 500px;
+      }
     }
   }
-
   /*______________FOOTER---RESPONSIVE:tablet---_____________*/
 
   .footer-container {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     .footer-text {
       width: 200px;
       .fa-solid {
         left: -10px;
       }
     }
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     .margin-left {
       margin-left: 200%;
     }
   }
 }
 /*correctif de l'animation du check pour la version TABLET*/
-@media (min-width: 450px) and (max-width: 1023px) {
-  .courses-container {
+@media (min-width: 400px) and (max-width: 1023px) {
+  .menu-main .courses-container {
     &:hover {
-      @keyframes narrowing {
-        from {
-          width: 80%;
-        }
-        to {
-          width: 67.5%;
+      .courses-text {
+        width: 72%;
+        margin: 0;
+      }
+      .check-animation {
+        background-color: $tertiary;
+        margin: -1rem -100% -1rem 2%;
+        .fa-solid {
+          transform: rotate(360deg);
         }
       }
     }
+    .check-animation {
+      margin: -1rem -100% -1rem 6%;
+    }
   }
 }
-
 /*____________________Version Desktop---RESPONSIVE---_____________________*/
 @media (min-width: 1024px) {
   /*___________PAGE D'ACCUEIL---RESPONSIVE:desktop---___________*/
@@ -610,14 +644,15 @@ footer {
       height: 500px;
     }
   }
-  .menu {
+  .menu-main {
+    padding: 13px 2%;
     margin: 0px auto 0px auto;
     .menu-container {
       display: grid;
       grid-template-columns: 33% 33% 33%;
     }
     .three_courses {
-      margin: 0 1%;
+      margin: 0 3%;
     }
     .order {
       margin: 40px auto;
