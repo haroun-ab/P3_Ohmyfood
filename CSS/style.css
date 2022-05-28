@@ -84,8 +84,8 @@ a {
 .loader .spinner::after {
   content: "";
   border: 10px solid transparent;
-  border-top: 10px solid #99e2d0;
-  border-bottom: 10px solid #99e2d0;
+  border-top: 10px solid rgb(153, 227, 208);
+  border-bottom: 10px solid rgb(153, 227, 208);
   margin: auto;
   border-radius: 50%;
   position: absolute;
@@ -322,7 +322,7 @@ header .booking .explore-btn:hover {
   position: absolute;
   top: 12px;
   right: 12px;
-  background-color: #99e2d0;
+  background-color: rgb(153, 227, 208);
   padding: 7px 10px 5px 10px;
   border-radius: 3px;
   color: #02934b;
@@ -438,7 +438,7 @@ header .booking .explore-btn:hover {
   font-size: 15px;
   font-weight: 400;
   color: #0c0c0c;
-  border-bottom: 3px solid #99e2d0;
+  border-bottom: 3px solid rgb(153, 227, 208);
   padding-bottom: 3px;
   width: 40px;
   text-transform: uppercase;
@@ -510,7 +510,7 @@ header .booking .explore-btn:hover {
   margin: 0;
 }
 .menu-main .courses-container:hover .check-animation {
-  background-color: #99e2d0;
+  background-color: rgb(153, 227, 208);
   margin: -1rem -100% -1rem 0;
 }
 .menu-main .courses-container:hover .check-animation .fa-solid {
@@ -520,10 +520,10 @@ header .booking .explore-btn:hover {
   margin: -1rem -100% -1rem 5%;
   width: 20%;
   height: 4rem;
-  background-color: #99e2d0;
+  background-color: rgb(153, 227, 208);
 }
 .menu-main .courses-container .check-animation .fa-solid {
-  color: #99e2d0;
+  color: rgb(153, 227, 208);
   padding: 5px;
   border-radius: 50%;
   font-size: 15px;
@@ -660,7 +660,7 @@ footer p {
     margin: 0;
   }
   .menu-main .courses-container:hover .check-animation {
-    background-color: #99e2d0;
+    background-color: rgb(153, 227, 208);
     margin: -1rem -100% -1rem 2%;
   }
   .menu-main .courses-container:hover .check-animation .fa-solid {
